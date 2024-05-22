@@ -55,17 +55,8 @@ body {
   border-bottom-right-radius: 80px;
   overflow: hidden;
 }
-.icon-search {
-  width: 44px;
-  height: 44px;
-  background: url("../images/icon/icon-search.png");
-  opacity: 1;
-  position: absolute;
-  top: 61px;
-  left: 1411px;
-}
-.text-searchbar {
-  width: 189px;
+.input-searchbar {
+  width: 1050px;
   color: rgba(26,64,188,0.5);
   position: absolute;
   top: 75px;
@@ -75,6 +66,16 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: left;
+}
+.icon-search {
+  width: 44px;
+  height: 44px;
+  background: url("../images/icon/icon-search.png");
+  opacity: 1;
+  position: absolute;
+  top: 61px;
+  left: 976px;
+  border: 0;
 }
 .icon-myprofile {
   width: 50px;
