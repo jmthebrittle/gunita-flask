@@ -5,14 +5,14 @@ app=Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('LandingPage.html')
+    return render_template("LandPage.html")
 
 @app.route('/createNewAcc')
-def new_student():
+def create_user():
     return render_template("SignUp.html")
 
 @app.route('/createUser', methods=['GET','POST'])
-def contact():
+def details():
     if request.method=='POST':
         try:
             FName=request.form['FName']
@@ -34,8 +34,6 @@ def contact():
             con.rollback()
         finally:
             return render_template("createUser.html", msg=msg)
-
-
 
 if __name__=='__main__':
     app.run(debug=True)
