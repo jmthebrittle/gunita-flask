@@ -20,7 +20,7 @@ def details():
             UName=request.form['UName']
             Email=request.form['Email']
             Password=request.form['Password']
-            if not UName or FName or LName or Email or Password:
+            if not FName or LName or UName or Email or Password:
                
                 with sql.connect("gunita.db") as con:
                     cur=con.cursor()
