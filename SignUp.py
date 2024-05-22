@@ -17,13 +17,14 @@ def details():
         try:
             FName=request.form['FName']
             LName=request.form['LName']
+            UName=request.form['UName']
             Email=request.form['Email']
             Password=request.form['Password']
-            if not FName or LName or Email or Password:
+            if not UName or FName or LName or Email or Password:
                
                 with sql.connect("gunita.db") as con:
                     cur=con.cursor()
-                    cur.execute("insert into Users (FName, LName, Email, Password)values(?, ?, ?, ?)",(FName, LName, Email, Password))
+                    cur.execute("insert into users (UName, FName, LName, Email, Password)values(?, ?, ?, ?)",(UName, FName, LName, Email, Password))
                     con.commit()
                     msg="Account created successfully!"
             else:
