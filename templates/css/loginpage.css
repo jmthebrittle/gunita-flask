@@ -56,16 +56,17 @@ body {
   overflow: hidden;
 }
 .input-searchbar {
-  width: 1050px;
+  width: 90%;
+  height: 100%;
   color: rgba(26,64,188,0.5);
-  position: absolute;
-  top: 75px;
-  left: 464px;
+  position: relative;
+  left: 30px;
   font-family: Raleway;
   font-weight: Light Italic;
   font-size: 18px;
   opacity: 1;
   text-align: left;
+  border: none;
 }
 .icon-search {
   width: 44px;
@@ -73,7 +74,7 @@ body {
   background: url("../images/icon/icon-search.png");
   opacity: 1;
   position: absolute;
-  top: 61px;
+  top: 10px;
   left: 976px;
   border: 0;
 }
