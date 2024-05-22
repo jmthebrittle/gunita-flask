@@ -4,7 +4,7 @@
 body {
   font-size: 14px;
 }
-.Header {
+.header {
   width: 100%;
   height: 176px;
   background: rgba(255,255,255,1);
@@ -13,4 +13,108 @@ body {
   top: 0px;
   left: 0px;
   overflow: hidden;
+}
+.itsmorefun {
+  width: 264px;
+  height: 84px;
+  background: url("../images/itsmorefun.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 37px;
+  left: 38px;
+  overflow: hidden;
+}
+.gunita-logo {
+  width: 78px;
+  height: 84px;
+  background: url("../images/gunita-logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 41px;
+  left: 330px;
+  overflow: hidden;
+}
+.header-searchbar {
+  width: 1050px;
+  height: 71px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 50px;
+  left: 435px;
+  border: 1px solid rgba(26,64,188,1);
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
+}
+.icon-search {
+  width: 44px;
+  height: 44px;
+  background: url("../images/icon/icon-search.png");
+  opacity: 1;
+  position: absolute;
+  top: 61px;
+  left: 1411px;
+}
+.text-searchbar {
+  width: 189px;
+  color: rgba(26,64,188,0.5);
+  position: absolute;
+  top: 75px;
+  left: 464px;
+  font-family: Raleway;
+  font-weight: Light Italic;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
+}
+.icon-myprofile {
+  width: 50px;
+  height: 49px;
+  background: url("../images/icon/icon-myprofile.png");
+  opacity: 1;
+  position: absolute;
+  top: 48px;
+  left: 1595px;
+}
+.text-myprofile {
+  width: 116px;
+  color: rgba(26,64,188,1);
+  position: absolute;
+  top: 112px;
+  left: 1562px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.icon-logout {
+  width: 49px;
+  height: 50px;
+  background: url("../images/icon/icon-logout.png");
+  opacity: 1;
+  position: absolute;
+  top: 48px;
+  left: 1772px;
+}
+.text-logout {
+  width: 82px;
+  color: rgba(255,92,100,1);
+  position: absolute;
+  top: 112px;
+  left: 1761px;
+  font-family: Poppins;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
 }
