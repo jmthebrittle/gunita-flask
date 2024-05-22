@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  font-size: 15px;
+  font-size: 14px;
 }
 .header {
   width: 100%;
@@ -43,7 +43,7 @@ body {
 .header-searchbar {
   width: 1050px;
   height: 71px;
-  background: rgba(255,255,255,1);
+  background: rgba(255,255,255,0);
   opacity: 1;
   position: absolute;
   top: 50px;
