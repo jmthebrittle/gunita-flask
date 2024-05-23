@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template
+#User Signup/Login Code
+from flask import Flask, request, render_template, url_for, redirect
 import sqlite3 as sql
 
 app=Flask(__name__)
@@ -7,7 +8,7 @@ app=Flask(__name__)
 def home():
     return render_template("LandPage.html")
 
-
+#SIGN UP
 @app.route('/createNewAcc', methods=['GET', 'POST'])
 def create_user():
    if request.method == 'POST':
@@ -32,5 +33,28 @@ def create_user():
            return render_template("createUser.html", msg=msg)
    else:
        return render_template("SignUp.html")
+   
+#LOGIN
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+   msg = ""
+   if request.method == 'POST':
+       try:
+           UName = request.form['UName']
+           Password = request.form['Password']
+           with sql.connect("gunita.db") as con:
+               cur = con.cursor()
+               cur.execute("SELECT * FROM users WHERE UName=? AND Password=?", (UName, Password))
+               user = cur.fetchone()
+               if user:
+                   msg = "Login successful!"
+                   # You can redirect to a user dashboard or home page here
+                   return render_template('userDash.html')
+               else:
+                   msg = "Invalid Username or Password!"
+       except Exception as e:
+           msg = f"Operational error: {e}"
+   return render_template("login1.html", msg=msg)
+
 if __name__ == '__main__':
    app.run(debug=True)
