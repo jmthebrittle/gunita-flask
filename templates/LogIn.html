@@ -2,16 +2,15 @@
 
 <html>
     <head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-        <link href="/static/css/loginpage.css" rel="stylesheet" />
-        <title>Document</title>
+        <link href="/static/css/header.css" rel="stylesheet" />
+        <link href="/static/css/layout.css" rel="stylesheet" />
     </head>
     <body>
         <div class="header">
             <div class="itsmorefun"></div>
-            <div class="gunita-logo"></div>
+            <a href="/"><div class="gunita-logo"></div></a>
 
             <div class="header-searchbar" action="">
                 <input type="text" class = "input-searchbar" placeholder="Start typing something..." name="search">
@@ -24,5 +23,19 @@
             <div class="icon-logout"></div>
             <span class="text-logout">Logout</span>
         </div>
+
+        <div class = "grid-item ColorArea"></div>
+        <div class = "grid-item PhotosArea"></div>
+        <div class = "grid-item FillArea">
+            <form action="/login" method="post">
+                <h2>Login</h2>
+                <br>Username<br>
+                <input type="text" name="UName" required/>
+                <br>Password<br>
+                <input type="password" name="Password" required/>
+                    <br><input type="submit" value="Login"/>
+            </form>
+        </div>
+
     </body>
 </html>

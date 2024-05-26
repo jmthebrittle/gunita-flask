@@ -54,7 +54,7 @@ def login():
                    msg = "Invalid Username or Password!"
        except Exception as e:
            msg = f"Operational error: {e}"
-   return render_template("login1.html", msg=msg)
+   return render_template("login.html", msg=msg)
 
 if __name__ == '__main__':
    app.run(debug=True)
