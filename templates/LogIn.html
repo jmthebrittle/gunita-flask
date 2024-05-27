@@ -3,38 +3,55 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
         <link href="/static/css/header.css" rel="stylesheet" />
-        <link href="/static/css/layout.css" rel="stylesheet" />
+        <link href="/static/css/layout-login.css" rel="stylesheet" />
+        <link href="/static/css/login.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="header">
-            <div class="itsmorefun"></div>
-            <a href="/"><div class="gunita-logo"></div></a>
+        <div class = "grid-container">
+            <div class="grid-item header">
+                <div class="itsmorefun"></div>
+                <a href="/"><div class="hgunita-logo"></div></a>
 
-            <div class="header-searchbar" action="">
-                <input type="text" class = "input-searchbar" placeholder="Start typing something..." name="search">
-                <button type="submit" class = "icon-search"></button>
+                <div class="header-searchbar" action="">
+                    <input type="text" class = "input-searchbar" placeholder="Start typing something..." name="search">
+                    <button type="submit" class = "icon-search"></button>
+                </div>
+
+                <a href="/">
+                    <div class="icon-myprofile"></div>
+                    <span class="text-myprofile">My Profile</span>
+                </a>
+
+                <a href="/">
+                    <div class="icon-logout"></div>
+                    <span class="text-logout">Logout</span>
+                </a>
             </div>
 
-            <div class="icon-myprofile"></div>
-            <span class="text-myprofile">My Profile</span>
+            <div class = "grid-item BannerArea"></div>
+            <div class = "grid-item PhotosArea"></div>
+            <div class = "grid-item FillArea">
 
-            <div class="icon-logout"></div>
-            <span class="text-logout">Logout</span>
-        </div>
+                <div class="gunita-logo"></div>
+                <div class="gunita-desc"></div>
 
-        <div class = "grid-item ColorArea"></div>
-        <div class = "grid-item PhotosArea"></div>
-        <div class = "grid-item FillArea">
-            <form action="/login" method="post">
-                <h2>Login</h2>
-                <br>Username<br>
-                <input type="text" name="UName" required/>
-                <br>Password<br>
-                <input type="password" name="Password" required/>
-                    <br><input type="submit" value="Login"/>
-            </form>
+                <form action="/login" method="post">
+                    <div class="greybackdrop"></div>
+
+                    <div class="username-text"></div>
+                    <input type="text" class="username" name="UName" required/>
+
+                    <div class="password-text"></div>
+                    <input type="password" class="password" name="Password" required/>
+
+                    <span class="signup">Don’t have an account? <a href = "/">Sign Up here</a></span>
+
+                    <input type="submit" class="button-signin" value=" "/>
+                </form>
+            </div>
         </div>
 
     </body>

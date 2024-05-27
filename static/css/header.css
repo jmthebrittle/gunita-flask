@@ -17,7 +17,7 @@ body {
   left: 38px;
   overflow: hidden;
 }
-.gunita-logo {
+.hgunita-logo {
   width: 78px;
   height: 84px;
   background: url("../images/gunita-logo.png");
@@ -49,8 +49,6 @@ body {
   width: 89%;
   height: 100%;
   color: rgba(26,64,188,0.5);
-  position: relative;
-  left: 30px;
   font-family: Raleway;
   font-weight: Light Italic;
   font-size: 18px;
