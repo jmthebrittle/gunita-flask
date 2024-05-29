@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .greybackdrop {
+    width: 775px;
+    height: 620px;
+    background: rgba(244,244,244,1);
+    opacity: 1;
+    position: absolute;
+    top: 461px;
+    left: 1062px;
+    overflow: hidden;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 20px;
+  }
+  .fnametext {
+    width: 127px;
+    color: rgba(26,64,188,1);
+    position: absolute;
+    top: 32px;
+    left: 140px;
+    opacity: 1;
+    text-align: left;
+  }
+  .emailtext {
+    width: 127px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 121px;
+    left: 141px;
+    opacity: 1;
+    text-align: left;
+  }
+  .unametext {
+    width: 127px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 218px;
+    left: 141px;
+    opacity: 1;
+    text-align: left;
+  }
+  .pwordtext {
+    width: 127px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 316px;
+    left: 141px;
+    opacity: 1;
+    text-align: left;
+  }
+  .cpwordtext {
+    width: 194px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 414px;
+    left: 141px;
+    text-align: left;
+  }
+  .lnametext {
+    width: 127px;
+    color: rgba(26,64,188,1);
+    position: absolute;
+    top: 32px;
+    left: 410px;
+    opacity: 1;
+    text-align: left;
+  }
+  .cpwordfield {
+    width: 446px;
+    height: 49px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 444px;
+    left: 140px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  .pwordfield {
+    width: 446px;
+    height: 49px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 349px;
+    left: 140px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  .unamefield {
+    width: 446px;
+    height: 49px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 251px;
+    left: 140px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  .emailfield {
+    width: 446px;
+    height: 49px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 155px;
+    left: 140px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  .lnamefield {
+    width: 183px;
+    height: 49px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 65px;
+    left: 407px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  .fnamefield {
+    width: 183px;
+    height: 49px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 65px;
+    left: 134px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  .bcreate {
+    width: 169px;
+    height: 51px;
+    background: rgba(26,64,188,1);
+    opacity: 1;
+    position: absolute;
+    top: 546px;
+    left: 303px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .gunita-logo {
+    width: 118px;
+    height: 128px;
+    background: url("../images/gunita-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 266px;
+    left: 1278px;
+    overflow: hidden;
+  }
+  .gunita-desc {
+    width: 195px;
+    height: 90px;
+    background: url("../images/gunita-desc.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 291px;
+    left: 1406px;
+    overflow: hidden;
+  }

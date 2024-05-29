@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+        <link href="/static/css/header.css" rel="stylesheet" />
+        <link href="/static/css/layout-signup.css" rel="stylesheet" />
+        <link href="/static/css/signup.css" rel="stylesheet" />
     </head>
 <body>
+    <div class = "grid-container">
+        <div class="grid-item header">
+            <div class="itsmorefun"></div>
+            <a href="/"><div class="hgunita-logo"></div></a>
+
+            <div class="header-searchbar" action="">
+                <input type="text" class = "input-searchbar" placeholder="Start typing something..." name="search">
+                <button type="submit" class = "icon-search"></button>
+            </div>
+
+            <a href="/">
+                <div class="icon-myprofile"></div>
+                <span class="text-myprofile">My Profile</span>
+            </a>
+
+            <a href="/">
+                <div class="icon-logout"></div>
+                <span class="text-logout">Logout</span>
+            </a>
+        </div>
+
+        <div class = "grid-item BannerArea"></div>
+        <div class = "grid-item PhotosArea"></div>
+        <div class = "grid-item FillArea">
+
+            <div class="gunita-logo"></div>
+            <div class="gunita-desc"></div>
+
+            <form action="/createNewAcc" method="post">
+                <div class="greybackdrop">
+
+                    <span class="fnametext">First Name</span>
+                    <div class="fnamefield"></div>
+
+                    <span class="lnametext">Last Name</span>
+                    <div class="lnamefield"></div>
+
+                    <span class="emailtext">Email</span>
+                    <div class="emailfield"></div>
+
+                    <span class="unametext">Username</span>
+                    <div class="unamefield"></div>
+
+                    <span class="pwordtext">Password</span>
+                    <div class="pwordfield"></div>
+
+                    <span class="cpwordtext">Confirm Password</span>  
+                    <div class="cpwordfield"></div>
+
+                    <div class="bcreate"></div>
+
+                </div>
+            </form>
+        </div>
+    </div>
     <form action="/createNewAcc" method="post">
         <h2>Create New Account</h2>
         <br>First Name<br>
