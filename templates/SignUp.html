@@ -41,24 +41,24 @@
                 <div class="greybackdrop">
 
                     <span class="fnametext">First Name</span>
-                    <div class="fnamefield"></div>
+                    <input type="text" class="fnamefield" name="FName" required/>
 
                     <span class="lnametext">Last Name</span>
-                    <div class="lnamefield"></div>
+                    <input type="text" class="lnamefield" name="LName" required/>
 
                     <span class="emailtext">Email</span>
-                    <div class="emailfield"></div>
+                    <input type="email" class="emailfield" name="Email" required/>
 
                     <span class="unametext">Username</span>
-                    <div class="unamefield"></div>
+                    <input type="text" class="unamefield" name="UName" required/>
 
                     <span class="pwordtext">Password</span>
-                    <div class="pwordfield"></div>
+                    <input type="password" class="pwordfield" name="Password" required/>
 
                     <span class="cpwordtext">Confirm Password</span>  
-                    <div class="cpwordfield"></div>
+                    <input type="cpassword" class="cpwordfield" name="cPassword" required/>
 
-                    <div class="bcreate"></div>
+                    <input type="submit" class="bcreate" value=" "/>
 
                 </div>
             </form>
@@ -67,15 +67,15 @@
     <form action="/createNewAcc" method="post">
         <h2>Create New Account</h2>
         <br>First Name<br>
-        <input type="text" name="FName"/>
+        <input type="text" name="FName" required/>
         <br>Last Name<br>
-        <input type="text" name="LName"/>
+        <input type="text" name="LName" required/>
         <br>Email<br>
-        <input type="email" name="Email"/>
+        <input type="email" name="Email" required/>
         <br>Username<br>
-        <input type="text" name="UName"/>
+        <input type="text" name="UName" required/>
         <br>Password<br>
-        <input type="password" name="Password"/>
+        <input type="password" name="Password" required/>
         <br><input type="submit" name="submit"/>
         </form>
 </body>
