@@ -26,6 +26,7 @@
     left: 140px;
     opacity: 1;
     text-align: left;
+    outline: none;
   }
   .emailtext {
     width: 127px;
