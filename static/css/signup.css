@@ -3,6 +3,7 @@
   }
   body {
     font-size: 14px;
+    body{ margin:0 auto; }
   }
   .greybackdrop {
     width: 775px;
