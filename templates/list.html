@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <table border = "1">
+            <thead>
+                <td><h3>ID</h3></td>
+                <td><h3>evName</h3></td>
+                <td><h3>evDesc</h3></td>
+                <td><h3>evImage</h3></td>
+            </thead>
+            {% for row in rows %}
+            <tr>
+                <td><h3>{{ row[0] }}</h3></td>
+                <td><h3>{{ row["evName"] }}</h3></td>
+                <td><h3>{{ row["evDesc"] }}</h3></td>
+                <td><h3><img src = "{{ row["evImage"] }}" alt = "Bangus Festival"></h3></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2><a href = "/">Go back to Home Page</a></h2>
+    </body>
+</html>
