@@ -82,6 +82,7 @@ background-color: rgba(255, 255, 255, 0.8);
   opacity: 1;
   background-position: center center;
   background-repeat: repeat;
+  margin-left: 55px;
 }
 .text-myprofile {
   color: rgba(26,64,188,1);
@@ -98,6 +99,7 @@ background-color: rgba(255, 255, 255, 0.8);
   opacity: 1;
   background-position: center center;
   position: relative;
+  margin-left: 35px;
 }
 .text-logout {
   color: rgba(255,92,100,1);

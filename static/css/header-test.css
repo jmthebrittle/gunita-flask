@@ -1,31 +1,28 @@
 * {
     box-sizing: border-box;
   }
-body {
+  body {
     font-size: 14px;
-}
-
-.item1h { grid-area: logo1; }
-.item2h { grid-area: logo2; }
-.item3h { grid-area: searchbar; }
-.item4h { grid-area: myprofile; }
-.item5h { grid-area: logout; }
-
-.grid-containerh {
+  }
+  
+  .item1h { grid-area: logo1; }
+  .item2h { grid-area: logo2; }
+  .item3h { grid-area: searchbar; }
+  .item4h { grid-area: myprofile; }
+  .item5h { grid-area: logout; }
+  
+  .grid-containerh {
   display: grid;
   grid-template-areas:
     'logo1 logo2 searchbar myprofile logout';
   gap: 1px;
   padding: 1px;
-}
-
-.grid-container > div {
+  }
+  
+  .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
+  }
+  
   .itsmorefun {
     width: 264px;
     height: 84px;
@@ -83,8 +80,9 @@ body {
     height: 49px;
     background: url("../images/icon/icon-myprofile.png");
     opacity: 1;
-    top: 48px;
-    left: 1595px;
+    background-position: center center;
+    background-repeat: repeat;
+    margin-left: 55px;
   }
   .text-myprofile {
     color: rgba(26,64,188,1);
@@ -99,6 +97,9 @@ body {
     height: 50px;
     background: url("../images/icon/icon-logout.png");
     opacity: 1;
+    background-position: center center;
+    position: relative;
+    margin-left: 35px;
   }
   .text-logout {
     color: rgba(255,92,100,1);
@@ -107,6 +108,7 @@ body {
     font-size: 24px;
     opacity: 1;
     text-align: center;
+    position: relative;
   }
   *:focus {
     outline: none;
