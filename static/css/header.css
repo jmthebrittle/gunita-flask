@@ -4,6 +4,25 @@
 body {
   font-size: 14px;
 }
+
+.item1h { grid-area: logo1; }
+.item2h { grid-area: logo2; }
+.item3h { grid-area: searchbar; }
+.item4h { grid-area: myprofile; }
+.item5h { grid-area: logout; }
+
+.grid-containerh {
+display: grid;
+grid-template-areas:
+  'logo1 logo2 searchbar myprofile logout';
+gap: 1px;
+padding: 1px;
+}
+
+.grid-container > div {
+background-color: rgba(255, 255, 255, 0.8);
+}
+
 .itsmorefun {
   width: 264px;
   height: 84px;
@@ -12,9 +31,6 @@ body {
   background-position: center center;
   background-size: cover;
   opacity: 1;
-  position: absolute;
-  top: 37px;
-  left: 38px;
   overflow: hidden;
 }
 .hgunita-logo {
@@ -25,9 +41,6 @@ body {
   background-position: center center;
   background-size: cover;
   opacity: 1;
-  position: absolute;
-  top: 41px;
-  left: 330px;
   overflow: hidden;
 }
 .header-searchbar {
@@ -35,9 +48,6 @@ body {
   height: 71px;
   background: rgba(255,255,255,0);
   opacity: 1;
-  position: absolute;
-  top: 50px;
-  left: 435px;
   border: 1px solid rgba(26,64,188,1);
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
@@ -61,52 +71,42 @@ body {
   height: 44px;
   background: url("../images/icon/icon-search.png");
   opacity: 1;
-  position: absolute;
-  top: 10px;
-  left: 976px;
   border: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .icon-myprofile {
   width: 50px;
   height: 49px;
   background: url("../images/icon/icon-myprofile.png");
   opacity: 1;
-  position: absolute;
-  top: 48px;
-  left: 1595px;
+  background-position: center center;
+  background-repeat: repeat;
 }
 .text-myprofile {
-  width: 116px;
   color: rgba(26,64,188,1);
-  position: absolute;
-  top: 112px;
-  left: 1562px;
   font-family: Poppins;
   font-weight: Medium;
   font-size: 24px;
   opacity: 1;
-  text-align: left;
+  text-align: center;
 }
 .icon-logout {
   width: 49px;
   height: 50px;
   background: url("../images/icon/icon-logout.png");
   opacity: 1;
-  position: absolute;
-  top: 48px;
-  left: 1772px;
+  background-position: center center;
+  position: relative;
 }
 .text-logout {
-  width: 82px;
   color: rgba(255,92,100,1);
-  position: absolute;
-  top: 112px;
-  left: 1761px;
   font-family: Poppins;
   font-weight: Regular;
   font-size: 24px;
   opacity: 1;
-  text-align: left;
+  text-align: center;
+  position: relative;
 }
 *:focus {
   outline: none;
