@@ -117,3 +117,6 @@
   .button-signin:hover {
     background: url("../images/button/Button-SignInHov.png");
   }
+  *:focus {
+    outline: none;
+  }
