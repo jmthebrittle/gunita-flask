@@ -1,16 +1,18 @@
 .gheader { grid-area: header; }
-.gphoto { grid-area: photo; }
-.gfillout { grid-area: fillout; }
 .gbanner { grid-area: banner; }
+.gitem { grid-area: item; }
+.gsuggestions { grid-area: suggestions; }
+.footer { grid-area: footer; }
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header'
-    'banner banner'
-    'photo fillout';
+    'header'
+    'banner'
+    'item'
+    'suggestions'
+    'footer';
   gap: 1px;
-  background-color: #2196F3;
   padding: 1px;
 }
 
@@ -33,9 +35,28 @@
     display: grid;
     grid-template-areas: 'bcolor1 bcolor2 bcolor3 bcolor4';
     width: 100%;
-    height: 20px;
+    height: 90px;
+    font-family: Raleway;
+    font-weight: bolder;
+    line-height: 90px;
+    text-shadow: 2px 0 #fff;
+}
+.bannertext{
+  color: #fff;
+  text-decoration: none;
+}
+.bannertext:visited{
+  text-decoration: none;
 }
 
-.BannerArea > div {
-    padding: 0px;
-  }
+.gitem {
+  height: 200px;
+}
+
+.gsuggestions{
+  height: 200px;
+}
+
+.footer {
+  height: 200px;
+}
