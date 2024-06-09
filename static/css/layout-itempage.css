@@ -34,12 +34,12 @@
 .BannerArea{
     display: grid;
     grid-template-areas: 'bcolor1 bcolor2 bcolor3 bcolor4';
+    grid-template-columns: 25%;
     width: 100%;
     height: 90px;
     font-family: Raleway;
     font-weight: bolder;
     line-height: 90px;
-    text-shadow: 2px 0 #fff;
 }
 .bannertext{
   color: #fff;
@@ -48,16 +48,23 @@
 .bannertext:visited{
   text-decoration: none;
 }
+.bannertext:hover{
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .itemarea {
   width: 100%;
   height: 600px;
+  font-family: Poppins;
 }
 
 .suggestions{
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-color: #1A40BC;
+  font-family: Raleway;
+  font-size: 24;
+  font-weight: bold;
 }
 
 .footer {
