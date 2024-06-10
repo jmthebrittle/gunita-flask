@@ -58,13 +58,22 @@
   font-family: Poppins;
 }
 
+.stext { grid-area: stext; font-family: Raleway; font-size: 24; font-weight: bold; text-align: center; height: 20px; }
+.tab1 { grid-area: tab1;}
+.tab2 { grid-area: tab2;}
+.tab3 { grid-area: tab3;}
+.tab4 { grid-area: tab4;}
+
 .suggestions{
   width: 100%;
-  height: 300px;
-  background-color: #1A40BC;
-  font-family: Raleway;
-  font-size: 24;
-  font-weight: bold;
+  display: grid;
+  grid-template-areas:
+    'stext stext stext stext'
+    'tab1 tab2 tab3 tab4';
+  grid-template-columns: 25%;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 10px;
 }
 
 .footer {
