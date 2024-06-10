@@ -1,9 +1,11 @@
 .info-sets{
     display: grid;
-    grid-template-columns: 300px auto;
+    grid-template-columns: auto auto;
     grid-gap: 10px;
     background-color: #2196F3;
-    padding: 10px;
+    padding:10px;
+    height: 700px;
+   
 }
 
 .info-sets > div {
@@ -11,9 +13,4 @@
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
-  }
-
-  .info-sets .recommendations {
-    display: grid;
-    background-color: aliceblue;
   }
