@@ -6,7 +6,6 @@
     color: #fff;
     display: grid;
     grid-template-areas: 'tab-image' 'tab-text';
-    background-color: tomato;
 
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -26,4 +25,8 @@
     grid-area: tab-text;
     margin-top: 5px;
     text-align: center;
+}
+
+.tab-attraction {
+    background-color: #FF5C64;
 }
