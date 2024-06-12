@@ -3,6 +3,7 @@
     height: 200px;
     font-family: Raleway;
     font-weight: bolder;
+    font-size: 24px;
     color: #fff;
     display: grid;
     grid-template-areas: 'tab-image' 'tab-text';
@@ -13,8 +14,7 @@
     border-bottom-right-radius: 15px;
     text-decoration: none;
   }
-
-.tab-image {
+.tab-image-l {
     grid-area: tab-image;
     height: 150px;
     width: 100%;
@@ -27,6 +27,31 @@
     margin-top: 5px;
     text-align: center;
     text-decoration: none;
+}
+
+.tab-portrait {
+    width: 230px;
+    height: 300px;
+    font-family: Raleway;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #fff;
+    display: grid;
+    grid-template-areas: 'tab-image' 'tab-text';
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+     border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-decoration: none;
+  }
+  .tab-image-p {
+    grid-area: tab-image;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .tab-attraction {

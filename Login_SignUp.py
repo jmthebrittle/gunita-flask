@@ -64,5 +64,17 @@ def item():
 def attractions():
     return render_template('AttractionPage.html')
 
+@app.route('/activities')
+def activities():
+    return render_template('ActivitiesPage.html')
+
+@app.route('/events')
+def events():
+    return render_template('EventPage.html')
+
+@app.route('/food')
+def food():
+    return render_template('FoodPage.html')
+
 if __name__ == '__main__':
    app.run(debug=True)

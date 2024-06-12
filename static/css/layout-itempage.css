@@ -1,28 +1,41 @@
-.gheader { grid-area: header; }
-.gbanner { grid-area: banner; }
-.gitem { grid-area: item; }
-.gsuggestions { grid-area: suggestions; }
-.footer { grid-area: footer; }
-
-.grid-container {
+.infopage {
   display: grid;
   grid-template-areas:
     'header'
     'banner'
-    'item'
+    'info'
     'suggestions'
     'footer';
   gap: 1px;
   padding: 1px;
 }
 
-.grid-container > div {
+.infopage > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 30px;
+}
+
+.itempage {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'banner banner'
+    'banner2 banner2'
+    'item suggestions'
+    'footer footer';
+  gap: 1px;
+  padding: 1px;
+}
+
+.itempage > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   font-size: 30px;
 }
 
 .header {
+    grid-area: header;
     padding: 10px 0;
 }
 
@@ -32,18 +45,19 @@
 .bcolor4 { grid-area: bcolor4; background-color: #FF5C64; }
 
 .BannerArea{
+    grid-area: banner;
     display: grid;
     grid-template-areas: 'bcolor1 bcolor2 bcolor3 bcolor4';
     grid-template-columns: 25%;
     width: 100%;
     height: 90px;
-    font-family: Raleway;
-    font-weight: bolder;
-    line-height: 90px;
 }
 .bannertext{
   color: #fff;
   text-decoration: none;
+  font-family: Raleway;
+  font-weight: bolder;
+  line-height: 90px;
 }
 .bannertext:visited{
   text-decoration: none;
@@ -51,8 +65,68 @@
 .bannertext:hover{
   color: rgba(255, 255, 255, 0.8);
 }
+.bannerdescription{
+  color: #fff;
+  text-decoration: none;
+  font-family: Raleway;
+  font-weight: bolder;
+  line-height: 90px;
+  font-size: 50px;
+}
+
+.BannerAttractions{
+  grid-area: banner2;
+  object-fit: cover;
+  background-image: url("../images/banner-attractions.png");
+  width: 100%;
+  height: 180px;
+  font-family: Raleway;
+  font-weight: bolder;
+  line-height: 90px;
+}
+
+.BannerActivities{
+  grid-area: banner2;
+  object-fit: cover;
+  background-image: url("../images/banner-activities.png");
+  width: 100%;
+  height: 180px;
+  font-family: Raleway;
+  font-weight: bolder;
+  line-height: 90px;
+}
+
+.BannerEvents{
+  grid-area: banner2;
+  object-fit: cover;
+  background-image: url("../images/banner-events.png");
+  width: 100%;
+  height: 180px;
+  font-family: Raleway;
+  font-weight: bolder;
+  line-height: 90px;
+}
+
+.BannerFood{
+  grid-area: banner2;
+  object-fit: cover;
+  background-image: url("../images/banner-food.png");
+  width: 100%;
+  height: 180px;
+  font-family: Raleway;
+  font-weight: bolder;
+  line-height: 90px;
+}
 
 .itemarea {
+  grid-area: item;
+  width: 100%;
+  height: 600px;
+  font-family: Poppins;
+}
+
+.infoarea {
+  grid-area: info;
   width: 100%;
   height: 600px;
   font-family: Poppins;
@@ -63,10 +137,26 @@
 .tab2 { grid-area: tab2;}
 .tab3 { grid-area: tab3;}
 .tab4 { grid-area: tab4;}
+.tab5 { grid-area: tab5;}
+.tab6 { grid-area: tab6;}
 .buttonleft { grid-area: buttonleft; }
 .buttonright { grid-area: buttonright; }
 
-.suggestions{
+.suggestions-itempage {
+  grid-area: suggestions;
+  width: 30%;
+  display: grid;
+  grid-template-areas:
+    'stext stext'
+    'tab1 tab2'
+    'tab3 tab4'
+    'tab5 tab6';
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.suggestions-infopage {
+  grid-area: suggestions;
   width: 100%;
   display: grid;
   grid-template-areas:
@@ -74,10 +164,11 @@
     'buttonleft tab1 tab2 tab3 tab4 buttonright';
   width: 100%;
   gap: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .footer {
+  grid-area: footer;
   width: 100%;
   height: 300px;
 }
