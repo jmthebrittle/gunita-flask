@@ -35,8 +35,8 @@
   }
   .username-text {
     width: 125px;
-    height: 18px;
-    background: url("../images/gunita-uname.png");
+    height: 25px;
+    color: rgba(26,64,188,1);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -45,6 +45,9 @@
     top: 620px;
     left: 1390px;
     overflow: hidden;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 20px;
   }
   .username {
     width: 446px;
@@ -62,8 +65,8 @@
   }
   .password-text {
     width: 116px;
-    height: 19px;
-    background: url("../images/gunita-pword.png");
+    height: 25px;
+    color: rgba(26,64,188,1);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -72,6 +75,9 @@
     top: 735px;
     left: 1395px;
     overflow: hidden;
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 20px;
   }
   .password {
     width: 446px;

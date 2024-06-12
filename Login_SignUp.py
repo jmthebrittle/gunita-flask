@@ -56,5 +56,13 @@ def login():
            msg = f"Operational error: {e}"
    return render_template("login.html", msg=msg)
 
+@app.route('/item')
+def item():
+    return render_template('ItemPage.html')
+
+@app.route('/attractions')
+def attractions():
+    return render_template('AttractionPage.html')
+
 if __name__ == '__main__':
    app.run(debug=True)

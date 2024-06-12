@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('FoodPage.html')
+    return render_template('ItemPage.html')
 
 @app.route('/list')
 def list():

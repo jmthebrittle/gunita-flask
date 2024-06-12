@@ -1,5 +1,5 @@
 .tab-landscape {
-    width: 100%;
+    width: 400px;
     height: 200px;
     font-family: Raleway;
     font-weight: bolder;
@@ -11,6 +11,7 @@
     border-top-right-radius: 15px;
      border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    text-decoration: none;
   }
 
 .tab-image {
@@ -25,8 +26,21 @@
     grid-area: tab-text;
     margin-top: 5px;
     text-align: center;
+    text-decoration: none;
 }
 
 .tab-attraction {
+    background-color: #FF8912;
+}
+
+.tab-activities {
+    background-color: #FFCD05;
+}
+
+.tab-events {
+    background-color: #1A40BC;
+}
+
+.tab-food {
     background-color: #FF5C64;
 }

@@ -63,14 +63,15 @@
 .tab2 { grid-area: tab2;}
 .tab3 { grid-area: tab3;}
 .tab4 { grid-area: tab4;}
+.buttonleft { grid-area: buttonleft; }
+.buttonright { grid-area: buttonright; }
 
 .suggestions{
   width: 100%;
   display: grid;
   grid-template-areas:
-    'stext stext stext stext'
-    'tab1 tab2 tab3 tab4';
-  grid-template-columns: 25%;
+    'buttonleft stext stext stext stext buttonright'
+    'buttonleft tab1 tab2 tab3 tab4 buttonright';
   width: 100%;
   gap: 20px;
   margin-bottom: 10px;
