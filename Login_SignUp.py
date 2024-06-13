@@ -76,5 +76,9 @@ def events():
 def food():
     return render_template('FoodPage.html')
 
+@app.route('/infoset-event')
+def infoevent():
+    return render_template('infoset-events.html')
+
 if __name__ == '__main__':
    app.run(debug=True)
