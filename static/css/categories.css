@@ -1,0 +1,48 @@
+.catinformation {
+    display: grid;
+    grid-template-areas: 'ititle alttitle' 'infoimage infoimage' 'region region' 'idescription idescription';
+    width: 1300px;
+    height: 100%;
+    grid-template-columns: 30%;
+}
+
+.ititle {
+    grid-area: ititle;
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: bold;
+    color: #1A40BC;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.alttitle {
+    grid-area: alttitle;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: italic;
+    color: #9A9A;
+    text-align: left;
+}
+
+.infoimage {
+    grid-area: infoimage;
+    height: 600px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.region {
+    grid-area: region;
+    text-align: left;
+    color: #1A40BC;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.idescription {
+    grid-area: idescription;
+    font-size: 20px;
+    font-family: Raleway;
+    text-align: left;
+}
