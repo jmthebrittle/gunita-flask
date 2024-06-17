@@ -69,3 +69,33 @@
 .tab-food {
     background-color: #FF5C64;
 }
+
+
+/*For heart icons*/
+.heart-icon-container {
+    width: 32px;  /* Adjust width and height for padding */
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Optional: Add a slight shadow for better visibility */
+}
+
+.heart-icon {
+    width: 20px;  /* Adjust size to fit within the container */
+    height: 20px;
+    background: url('/static/icons/heart-add.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.heart-icon-container.active .heart-icon {
+    background: url('/static/icons/heart-tick.svg') no-repeat center center;
+    background-size: contain;
+}
