@@ -1,0 +1,41 @@
+<html>
+
+<head>
+	<title>Handling of http get and post request</title>
+	<style>
+		div {
+			width: 400px;
+			border: 1px solid green;
+			padding: 10px;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+
+<body>
+    {% block content %}  
+        <h1>Contact List</h1> 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>evID</th> 
+                    <th>evName</th> 
+                    <th>evRegion</th> 
+                    <th>evImg</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                {% for events in events %} 
+                <tr> 
+                    <td>{{ events[0] }}</td> 
+                    <td>{{ events[1] }}</td> 
+                    <td>{{ events[2] }}</td> 
+                    <td>{{ events[3] }}</td> 
+                </tr> 
+                {% endfor %} 
+            </tbody> 
+        </table> 
+    {% endblock %} 
+</body>
+
+</html>
