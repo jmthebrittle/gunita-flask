@@ -136,5 +136,7 @@ def get_items():
         items = cur.fetchall()
     return jsonify(items)"""
 
+
+
 if __name__ == '__main__':
     app.run(debug=True)

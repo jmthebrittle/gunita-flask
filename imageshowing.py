@@ -1,20 +1,16 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template, url_for, redirect
 import sqlite3 as sql
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('ItemPage.html')
-
-@app.route('/list')
-def list():
-    con = sql.connect("gunita.db")
-    con.row_factory = sql.Row
-    cur = con.cursor()
-    cur.execute("SELECT * FROM events")
-    rows = cur.fetchall()
-    return render_template("list.html", rows = rows)
+@app.route('/', methods=['GET']) 
+def view_contacts(): 
+    conn = sql.connect('gunita.db') 
+    cursor = conn.cursor() 
+    cursor.execute("SELECT * FROM events") 
+    events = cursor.fetchall() 
+    conn.close()
+    return render_template('test.html', events=events)
 
 if __name__ == '__main__':
    app.run(debug=True)
