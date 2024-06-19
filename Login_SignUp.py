@@ -62,7 +62,7 @@ def homepage():
     return render_template('homepage.html')
 
 # User Dashboard
-@app.route('/dashboard')
+@app.route('/profile')
 def dashboard():
     return render_template('userDashboard.html')
 
@@ -93,7 +93,7 @@ def infoevent():
     return render_template('infoset-events.html')
 
 #connect dashboard to database (unfinished) ~ rona
-"""
+
 @app.route('/GetEventByID/<int:id_data>', methods=['POST','GET'])
 def GetEventByID(id_data):
     with sql.connect("gunita.db") as con:
@@ -134,7 +134,7 @@ def get_items():
         cur = con.cursor()
         cur.execute('SELECT img, text, link, category FROM saved_items')
         items = cur.fetchall()
-    return jsonify(items)"""
+    return jsonify(items)
 
 
 
