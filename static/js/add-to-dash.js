@@ -1,19 +1,31 @@
-function toggleHeart(event, element) {
+document.addEventListener('DOMContentLoaded', () => {
+    setupHeartIcons();
+    setupCarousel();
+});
+
+function setupHeartIcons() {
+    const heartIcons = document.querySelectorAll('.heart-icon-container');
+    heartIcons.forEach(icon => {
+        icon.addEventListener('click', (event) => {
+            toggleFavorite(event, icon, !icon.classList.contains('active'));
+        });
+    });
+}
+
+function toggleFavorite(event, element, adding) {
     event.preventDefault();
     event.stopPropagation();
 
-    const heartContainer = element.closest('.heart-icon-container');
-    heartContainer.classList.toggle('active');
-    const isSaved = heartContainer.classList.contains('active');
+    element.classList.toggle('active', adding);
+    const isSaved = element.classList.contains('active');
 
-    const tab = heartContainer.closest('.tab-portrait');
+    const tab = element.closest('.tab-item');
     const itemData = {
         img: tab.querySelector('img').src,
         text: tab.querySelector('.tab-text').innerText,
-        link: tab.href,
-        category: tab.classList.contains('tab-events') ? 'events' :
+        category: tab.classList.contains('tab-activities') ? 'activities' :
                   tab.classList.contains('tab-attraction') ? 'attractions' :
-                  tab.classList.contains('tab-activities') ? 'activities' :
+                  tab.classList.contains('tab-events') ? 'events' :
                   'food'
     };
 
@@ -25,54 +37,73 @@ function toggleHeart(event, element) {
 }
 
 function saveItem(itemData) {
-    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-    savedItems.push(itemData);
-    localStorage.setItem('savedItems', JSON.stringify(savedItems));
-    updateDashboard(itemData, 'add');
+    fetch('/add_item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(itemData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            location.reload(); 
+        }
+    });
 }
 
 function removeItem(itemData) {
-    let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-    savedItems = savedItems.filter(item => item.img !== itemData.img);
-    localStorage.setItem('savedItems', JSON.stringify(savedItems));
-    updateDashboard(itemData, 'remove');
-}
-
-function updateDashboard(itemData, action) {
-    const dashboardItems = document.querySelectorAll('.saved-item');
-    dashboardItems.forEach(item => {
-        if (item.querySelector('img').src === itemData.img) {
-            if (action === 'remove') {
-                item.remove();
-            }
-            return;
+    fetch('/remove_item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(itemData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            location.reload(); 
         }
     });
+}
 
-    if (action === 'add') {
-        addDashboardItem(itemData);
+
+function setupCarousel() {
+    const carousels = document.querySelectorAll(".recommended-carousel .carousel-content");
+    const prevButton = document.querySelector(".carousel-prev");
+    const nextButton = document.querySelector(".carousel-next");
+    let currentIndex = 0;
+
+    function showCarousel(index) {
+        carousels.forEach((carousel, i) => {
+            if (i === index) {
+                carousel.classList.add("active");
+                carousel.style.transform = "translateX(0)";
+            } else {
+                carousel.classList.remove("active");
+                carousel.style.transform = `translateX(${i > index ? 100 : -100}%)`;
+            }
+        });
     }
+
+    function nextCarousel() {
+        currentIndex = (currentIndex + 1) % carousels.length;
+        showCarousel(currentIndex);
+    }
+
+    function prevCarousel() {
+        currentIndex = (currentIndex - 1 + carousels.length) % carousels.length;
+        showCarousel(currentIndex);
+    }
+
+    showCarousel(currentIndex);
+    setInterval(nextCarousel, 5000); // Rotate every 5 seconds
+
+    // Event listeners for buttons
+    prevButton.addEventListener("click", prevCarousel);
+    nextButton.addEventListener("click", nextCarousel);
 }
 
-function addDashboardItem(itemData) {
-    const overviewContainer = document.querySelector('#mySavedItems');
-    const categoryContainer = document.querySelector(`#${itemData.category}`);
-
-    const newItem = `
-    <div class="saved-item">
-        <a href="${itemData.link}">
-            <img src="${itemData.img}" alt="${itemData.text}">
-            <p>${itemData.text}</p>
-        </a>
-    </div>`;
-
-    overviewContainer.innerHTML += newItem;
-    categoryContainer.innerHTML += newItem;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-    savedItems.forEach(itemData => {
-        addDashboardItem(itemData);
-    });
-});
+// Call setupCarousel on window load
+window.addEventListener('load', setupCarousel);

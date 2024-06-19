@@ -1,34 +1,39 @@
+/* Landscape tabs */
 .tab-landscape {
     width: 400px;
-    height: 200px;
+    height: 250px;
     font-family: Raleway;
     font-weight: bolder;
     font-size: 24px;
     color: #fff;
     display: grid;
     grid-template-areas: 'tab-image' 'tab-text';
-
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-     border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
     text-decoration: none;
-  }
+    position: relative;
+    background-color: #333; 
+}
+
 .tab-image-l {
     grid-area: tab-image;
-    height: 150px;
+    height: 180px; 
     width: 100%;
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
 .tab-text {
     grid-area: tab-text;
-    margin-top: 5px;
     text-align: center;
     text-decoration: none;
+    color: #ffffff;
+    margin: auto;
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
-
+/* Portrait Tabs */
 .tab-portrait {
     width: 230px;
     height: 300px;
@@ -38,14 +43,12 @@
     color: #fff;
     display: grid;
     grid-template-areas: 'tab-image' 'tab-text';
-
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-     border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
     text-decoration: none;
-  }
-  .tab-image-p {
+    position: relative;
+}
+
+.tab-image-p {
     grid-area: tab-image;
     height: 250px;
     width: 100%;
@@ -54,26 +57,26 @@
     border-top-right-radius: 15px;
 }
 
-.tab-attraction {
+/* Category Colors */
+.tab-attraction, .tab-landscape.tab-attraction {
     background-color: #FF8912;
 }
 
-.tab-activities {
+.tab-activities, .tab-landscape.tab-activities {
     background-color: #FFCD05;
 }
 
-.tab-events {
+.tab-events, .tab-landscape.tab-events {
     background-color: #1A40BC;
 }
 
-.tab-food {
+.tab-food, .tab-landscape.tab-food {
     background-color: #FF5C64;
 }
 
-
-/*For heart icons*/
+/* Heart Icon*/
 .heart-icon-container {
-    width: 32px;  /* Adjust width and height for padding */
+    width: 32px; 
     height: 32px;
     background-color: white;
     border-radius: 50%;
@@ -85,17 +88,19 @@
     right: 10px;
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Optional: Add a slight shadow for better visibility */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .heart-icon {
-    width: 20px;  /* Adjust size to fit within the container */
+    width: 20px; 
     height: 20px;
-    background: url('/static/icons/heart-add.svg') no-repeat center center;
     background-size: contain;
 }
 
 .heart-icon-container.active .heart-icon {
     background: url('/static/icons/heart-tick.svg') no-repeat center center;
-    background-size: contain;
+}
+
+.heart-icon-container:not(.active) .heart-icon {
+    background: url('/static/icons/heart-add.svg') no-repeat center center;
 }
