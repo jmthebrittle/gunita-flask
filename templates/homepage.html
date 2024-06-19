@@ -14,25 +14,7 @@
 </head>
 <body>
    <!-- Header -->
-<div class="header">
-    <div class="grid-containerh">
-        <div class="item1h"></div>
-        <a href="/"><div class="item2h"></div></a>
-        <div class="header-searchbar">
-            <input type="text" class="input-searchbar" placeholder="Start typing something..." name="search">
-            <button type="submit" class="icon-search"></button>
-        </div>
-        <a href="/profile" class="nav-link">
-            <img src="/static/icons/profile-circle.svg" alt="Profile">
-            <span class="profLogoTxt">My Profile</span>
-        </a>
-        <a href="/logout" class="nav-link" >
-            <img src="/static/icons/logout.svg" alt="Logout">
-            <span class="logoutLogoTxt">Logout</span>
-        </a>
-    </div>
-</div>
-
+   {% include 'header.html' %}
 
     <!-- NAVBAR -->
     <div class="BannerArea">
