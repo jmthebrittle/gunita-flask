@@ -1,18 +1,17 @@
-# Byte-compiled / optimized / DLL files
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
 *.so
 
-# Virtual environment
+
 venv/
 .env/
 env/
 ENV/
 
-# Distribution / packaging
+
 .Python
 build/
 develop-eggs/
@@ -30,25 +29,25 @@ var/
 *.egg
 MANIFEST
 
-# Pytest cache
+
 .pytest_cache/
 
-# IDE and editor files
+
 .idea/
 .vscode/
 *.swp
 
-# Logs
+
 *.log
 
-# SQLite database files
+
 *.sqlite3
 *.db
 
-# Flask instance folder
+
 instance/
 
-# Environment variable files
+
 *.env
 venv/Scripts/tldextract.exe
 venv/Scripts/pip3.exe
