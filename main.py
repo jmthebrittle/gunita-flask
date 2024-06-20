@@ -1,8 +1,32 @@
 from flask import Flask, request, render_template, redirect, jsonify, session, url_for
+from flask_sqlalchemy import SQLAlchemy
 import os
 import sqlite3 as sql
 
 app = Flask(__name__)
+
+#database config
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///gunita.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = os.urandom(24)
+db = SQLAlchemy(app)
+
+#favourites (for dashboard)
+class Favorite(db.Model):
+    __tablename__ = 'favorites'
+    id = db.Column(db.Integer, primary_key=True)
+    img = db.Column(db.String(255))
+    text = db.Column(db.String(255))
+    category = db.Column(db.String(50))
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'img': self.img,
+            'text': self.text,
+            'category': self.category
+        }
+
 
 @app.route('/')
 def home():
@@ -56,6 +80,8 @@ def login():
             msg = f"Operational error: {e}"
     return render_template("login.html", msg=msg)
 
+
+
 # Route for homepage
 @app.route('/homepage')
 def homepage():
@@ -64,9 +90,15 @@ def homepage():
 # User Dashboard
 @app.route('/profile')
 def dashboard():
-    return render_template('userDashboard.html')
+    favorites = Favorite.query.all()
+    return render_template('userDashboard.html', favorites=favorites)
 
 # Event Handlers
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect('/login')
 
 @app.route('/item')
 def item():
@@ -92,51 +124,39 @@ def food():
 def infoevent():
     return render_template('infoset-events.html')
 
+
+
 #connect dashboard to database (unfinished) ~ rona
-
-@app.route('/GetEventByID/<int:id_data>', methods=['POST','GET'])
-def GetEventByID(id_data):
-    with sql.connect("gunita.db") as con:
-        con.row_factory = sql.Row
-        cur = con.cursor()
-        cur.execute("SELECT * FROM events WHERE evID = ?", (id_data,))
-        rows = cur.fetchall()
-    return render_template("Itempage.html", rows=rows)
-
-# Save and Remove Items
 @app.route('/add_item', methods=['POST'])
 def add_item():
     data = request.json
-    with sql.connect('gunita.db') as con:
-        cur = con.cursor()
-        cur.execute('''
-            INSERT INTO saved_items (img, text, link, category)
-            VALUES (?, ?, ?, ?)
-        ''', (data['img'], data['text'], data['link'], data['category']))
-        con.commit()
-    return jsonify({'status': 'success'})
+    if 'img' in data and 'text' in data and 'category' in data:
+        new_favorite = Favorite(img=data['img'], text=data['text'], category=data['category'])
+        db.session.add(new_favorite)
+        db.session.commit()
+        return jsonify({'status': 'success', 'id': new_favorite.id})
+    else:
+        return jsonify({'status': 'failed', 'reason': 'Missing data'}), 400
 
-@app.route('/remove_item', methods=['POST'])
+
+@app.route('/remove_item', methods=['DELETE'])
 def remove_item():
     data = request.json
-    with sql.connect('gunita.db') as con:
-        cur = con.cursor()
-        cur.execute('''
-            DELETE FROM saved_items
-            WHERE img = ? AND category = ?
-        ''', (data['img'], data['category']))
-        con.commit()
-    return jsonify({'status': 'success'})
+    favorite = Favorite.query.filter_by(img=data['img'], category=data['category']).first()
+    if favorite:
+        db.session.delete(favorite)
+        db.session.commit()
+        return jsonify({'status': 'success'})
+    return jsonify({'status': 'not found'}), 404
 
 @app.route('/get_items', methods=['GET'])
 def get_items():
-    with sql.connect('gunita.db') as con:
-        cur = con.cursor()
-        cur.execute('SELECT img, text, link, category FROM saved_items')
-        items = cur.fetchall()
+    favorites = Favorite.query.all()
+    items = [favorite.to_dict() for favorite in favorites]
     return jsonify(items)
 
 
-
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

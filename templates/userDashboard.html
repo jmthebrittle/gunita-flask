@@ -60,16 +60,16 @@
         </div>
         <div class="content">
             {% for favorite in favorites %}
-                <div id="saved-{{ favorite.category }}" class="saved-items">
-                    <h3>Saved {{ favorite.category.capitalize() }}</h3>
+                <div id="saved-{{ favorite.category | default('uncategorized') }}" class="saved-items">
+                    <h3>Saved {{ favorite.category | default('Uncategorized') | capitalize }}</h3>
                     <div class="tab-container">
-                        <a class="tab-portrait tab-{{ favorite.category }}" href="#">
+                        <a class="tab-portrait tab-{{ favorite.category | default('uncategorized') }}" href="#">
                             <div class="tab-content">
-                                <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}" onclick="toggleHeart(event, this)">
+                                <div class="heart-icon-container active" data-img="{{ favorite.img | default('') }}" data-text="{{ favorite.text | default('No Title') }}" data-category="{{ favorite.category | default('uncategorized') }}" onclick="toggleHeart(event, this)">
                                     <div class="heart-icon"></div>
                                 </div>
-                                <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
-                                <p class="tab-text">{{ favorite.text }}</p>
+                                <img class="tab-image-p" src="{{ favorite.img | default('/static/images/default.png') }}" alt="{{ favorite.text | default('No Title') }}">
+                                <p class="tab-text">{{ favorite.text | default('No Title') }}</p>
                             </div>
                         </a>
                     </div>

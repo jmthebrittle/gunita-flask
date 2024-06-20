@@ -16,12 +16,14 @@ function toggleFavorite(event, element, adding) {
     event.preventDefault();
     event.stopPropagation();
 
-    element.classList.toggle('active', adding);
+    const tab = element.closest('.tab-content');
     const itemData = {
         img: element.getAttribute('data-img'),
         text: element.getAttribute('data-text'),
         category: element.getAttribute('data-category')
     };
+
+    element.classList.toggle('active', adding);
 
     if (adding) {
         saveItem(itemData);
@@ -41,7 +43,7 @@ function saveItem(itemData) {
     .then(response => response.json())
     .then(data => {
         console.log('Item saved:', data);
-        // Update the dashboard UI if needed
+        // Optionally update UI here
     })
     .catch(error => {
         console.error('Error saving item:', error);
@@ -59,7 +61,7 @@ function removeItem(itemData) {
     .then(response => response.json())
     .then(data => {
         console.log('Item removed:', data);
-        // Update the dashboard UI if needed
+        // Optionally update UI here
     })
     .catch(error => {
         console.error('Error removing item:', error);
