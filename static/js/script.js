@@ -13,4 +13,3 @@ function scrollRight() {
         behavior: 'smooth'
     });
 }
-

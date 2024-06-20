@@ -1,0 +1,55 @@
+.catinformation {
+    display: grid;
+    grid-template-areas: 'ititle alttitle' 'infoimage infoimage' 'region region' 'idescription idescription';
+    width: auto;
+    height: 100%;
+    margin-right:20px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.ititle {
+    grid-area: ititle;
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+    vertical-align: bottom;
+}
+
+.alttitle {
+    grid-area: alttitle;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: italic;
+    color: #9A9A;
+    text-align: left;
+    margin-top: auto;
+}
+
+.infoimage {
+    grid-area: infoimage;
+    height: auto;
+    object-fit: cover;
+    width: 150px;
+}
+
+.region {
+    grid-area: region;
+    text-align: left;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.idescription {
+    grid-area: idescription;
+    font-size: 20px;
+    font-family: Raleway;
+    text-align: left;
+}
+
+.textattractions { color: #FF8912; }
+.textactivities { color: #FFCD05; }
+.textevents { color: #1A40BC; }
+.textfood { color: #FF5C64; }

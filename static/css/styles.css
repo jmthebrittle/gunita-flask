@@ -1,3 +1,4 @@
+/* Importing the Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap');
 
 * {
@@ -17,9 +18,6 @@ body {
     grid-template-rows: auto auto;
     gap: 20px;
     padding: 10px;
-
-    display: table;
-    clear: both;
 }
 
 .image-section {
@@ -28,7 +26,7 @@ body {
 }
 
 .main-image {
-    width: 747px;
+    width: 100%;
     height: auto;
 }
 
@@ -36,14 +34,10 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    background-color: #1e3a8a;
-    width: 50%;
-
-    
 }
 
 .image-placeholder {
-    width: 20%;
+    width: 32%;
     height: auto;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -178,3 +172,7 @@ body {
 .scroll-button.right {
     right: 0;
 }
+
+
+
+

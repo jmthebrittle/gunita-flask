@@ -1,84 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-        <link href="/static/css/header.css" rel="stylesheet" />
-        <link href="/static/css/layout-itempage.css" rel="stylesheet" />
-        <link href="/static/css/tabs.css" rel="stylesheet" />
-        <link href="/static/css/footer.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="itempage">
-            <div class="header">
-                <div class="grid-containerh">
-                    <div class="item1h itsmorefun"></div>
-                    <a href="/"><div class="item2h hgunita-logo"></div></a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ food }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="/static/css/header.css" rel="stylesheet" />
+    <link href="/static/css/layout-itempage.css" rel="stylesheet" />
+    <link href="/static/css/tabs.css" rel="stylesheet" />
+    <link href="/static/css/footer.css" rel="stylesheet" />
+    <link href="/static/css/categories.css" rel="stylesheet" />
+    <style>
+        .tab-content {
+            position: relative;
+        }
 
-                    <div class="item3h header-searchbar" action="">
-                        <input type="text" class = "input-searchbar" placeholder="Start typing something..." name="search">
-                        <button type="submit" class = "icon-search"></button>
-                    </div>
+        .heart-icon-container {
+            width: 32px;
+            height: 32px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
 
-                    <a href="/"><div class="item4h">
-                        <div class="icon-myprofile"></div>
-                        <span class="text-myprofile">My Profile</span>
-                    </div></a>
+        .heart-icon {
+            width: 20px;
+            height: 20px;
+            background: url('/static/icons/heart-add.svg') no-repeat center center;
+            background-size: contain;
+        }
 
-                    <a href="/login"><div class="'item5h">
-                        <div class="icon-logout"></div>
-                        <span class="text-logout">Logout</span>
-                    </div></a>
-                </div>
-            </div>
-            <div class="BannerArea">
-                <div class="bcolor1"><a href="/attractions" class="bannertext">ATTRACTTIONS</a></div>
-                <div class="bcolor2"><a href="/activities" class="bannertext">ACTIVITIES</a></div>
-                <div class="bcolor3"><a href="/events" class="bannertext">EVENTS</a></div>
-                <div class="bcolor4"><a href="/food" class="bannertext">FOOD</a></div>
-            </div>
-            <div class="BannerFood">
-                <p class="bannerdescription">FOOD</p>
-            </div>
+        .heart-icon-container.active .heart-icon {
+            background: url('/static/icons/heart-tick.svg') no-repeat center center;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+{% include 'header.html' %}
+<!-- Nav&Banner -->
+{% include 'navwithBanner.html' %}
+<!--Main content-->
+<div class="itempage">
+        <div class="itemarea catinformation">
+            <h1 class="ititle textevents" style="color:#C32830 ; font-weight: bolder;">Food Name
+                <span style="font-size:0.6em; color:#888; font-weight:lighter; font-style: italic;">
+                    (alternative name)
+                </span></h1>
+            <img class="infoimage" src="/static/images/Food/pakbet-1.jpg">
+            <h2 class="region textevents" style="color:#C32830 ; font-weight: bolder;">Region Goes Here</h2>
+            <p class="idescription">Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. 
 
-            <div class="itemarea">Item goes here</div>
-            
-            <div class="suggestions suggestions-itempage">
-                <p class="stext">You might also like:</p>
-                <div class="tab-portrait tab1 tab-food">
-                    <img class="tab-image-p" src="https://media.istockphoto.com/id/1267105757/photo/filipino-dish-called-pinakbet-or-mixed-vegetables-in-fish-paste-sauce-with-crispy-pork-belly.jpg?s=2048x2048&w=is&k=20&c=Ch80dX5z0Cyk_Zz7Rh-jAv8NNHpysBlq4bXCKZhFUmc=">
-                    <p class="tab-text">Pinakbet</p>
-                </div>
-                <div class="tab-portrait tab2 tab-food">
-                    <img class="tab-image-p" src="https://media.istockphoto.com/id/1053332704/photo/spicy-bicol-express-with-chili-coconut-garlic-onion-and-ginger-close-up-in-a-bowl-horizontal.jpg?s=2048x2048&w=is&k=20&c=t9Ojiv0_l5ggSbZ-3wLrwRl6PxKjtxrHiAI8jecD0fg=">
-                    <p class="tab-text">Bicol Express</p>
-                </div>
-                <div class="tab-portrait tab3 tab-food">
-                    <img class="tab-image-p" src="https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
-                <div class="tab-portrait tab4 tab-food">
-                    <img class="tab-image-p" src="https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/Philippines-small-640x480_0.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
-                <div class="tab-portrait tab5 tab-food">
-                    <img class="tab-image-p" src="https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/Philippines-small-640x480_0.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
-                <div class="tab-portrait tab6 tab-food">
-                    <img class="tab-image-p" src="https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/Philippines-small-640x480_0.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
-            </div>
+                Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. </p>
+        </div>
+        
+        {% include 'suggestedFoods.html' %}
 
-            <div class="footer">
-                <div class="grid-containerf">
-                    <div class="item3f"></div>
-                    <div class="flogo1 logo1"></div>
-                    <div class="flogo2 logo2"></div>
-                </div>
+        <div class="footer">
+            <div class="grid-containerf">
+                <div class="item3f"></div>
+                <div class="flogo1 logo1"></div>
+                <div class="flogo2 logo2"></div>
             </div>
-          </div>
-    </body>
+        </div>
+    </div>
+    <script src="/static/js/add-to-dash.js"></script>
+</body>
 </html>
