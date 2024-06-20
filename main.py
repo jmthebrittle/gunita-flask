@@ -100,10 +100,6 @@ def logout():
     session.pop('username', None)
     return redirect('/login')
 
-@app.route('/item')
-def item():
-    return render_template('ItemPage.html')
-
 @app.route('/attractions')
 def attractions():
     return render_template('AttractionPage.html')
@@ -120,11 +116,21 @@ def events():
 def food():
     return render_template('FoodPage.html')
 
-@app.route('/infoset-event')
-def infoevent():
-    return render_template('infoset-events.html')
+@app.route('/item-att')
+def item():
+    return render_template('ItemPage-Attraction.html')
 
+@app.route('/item-act')
+def item():
+    return render_template('ItemPage-Activity.html')
 
+@app.route('/item-eve')
+def item():
+    return render_template('ItemPage-Event.html')
+
+@app.route('/item-food')
+def item():
+    return render_template('ItemPage-Food.html')
 
 #connect dashboard to database (unfinished) ~ rona
 @app.route('/add_item', methods=['POST'])
