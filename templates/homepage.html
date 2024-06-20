@@ -1,236 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabs.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
-    <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-</head>
-<body>
-   <!-- Header -->
-   {% include 'header.html' %}
 
-    <!-- NAVBAR -->
-    <div class="hBannerArea">
-        <a href="/attractions" class="hbanner-item hattractions">
-            <div class="hbannertext">ATTRACTIONS</div>
-            <img src="{{ url_for('static', filename='images/Activities_Attractions/siargao-maasin-river-swing-2.jpg') }}" alt="Attractions">
-        </a>
-        <a href="/activities" class="hbanner-item hactivities">
-            <div class="hbannertext">ACTIVITIES</div>
-            <img src="{{ url_for('static', filename='images/Activities_Attractions/siargao-island-hopping-4.jpg') }}" alt="Activities">
-        </a>
-        <a href="/events" class="hbanner-item hevents">
-            <div class="hbannertext">EVENTS</div>
-            <img src="{{ url_for('static', filename='images/Events/boracay-dragon-boat-fest-1.jpg') }}" alt="Events">
-        </a>
-        <a href="/food" class="hbanner-item hfood">
-            <div class="hbannertext">FOOD</div>
-            <img src="{{ url_for('static', filename='images/Food/kinilaw-2.jpg') }}" alt="Food">
-        </a>
-    </div>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+        <link href="/static/css/header.css" rel="stylesheet" />
+        <link href="/static/css/layout-login.css" rel="stylesheet" />
+        <link href="/static/css/login.css" rel="stylesheet" />
+        <link href="/static/css/homepage.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!--HEADER-->
+        <div class = "grid-container">
+            <div class="grid-item header">
+                <div class="itsmorefun"></div>
+                <a href="/"><div class="hgunita-logo"></div></a>
 
-     <!-- Main Content -->
-     <div class="main-content">
-        <!-- Region Section -->
-        <div class="region-container">
-            <div class="region-section">
-                <div class="region-map">
-                    <img src="{{ url_for('static', filename='images/map-placeholder.jpg') }}" alt="Map" class="map-img">
+                <div class="header-searchbar" action="">
+                    <input type="text" class = "input-searchbar" placeholder="Start typing something..." name="search">
+                    <button type="submit" class = "icon-search"></button>
                 </div>
-                <div class="region-info">
-                    <h1 class="region-title">REGION NAME</h1>
-                    <h2 class="region-subtitle">Location title goes here</h2>
-                    <p class="region-description">
-                        Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. 
-                    </p>
-                   
+
+                <a href="/">
+                    <div class="icon-myprofile"></div>
+                    <span class="text-myprofile">My Profile</span>
+                </a>
+
+                <a href="/">
+                    <div class="icon-logout"></div>
+                    <span class="text-logout">Logout</span>
+                </a>
+            </div>
+
+            <div class="ActivitiesBtn" style="width: 100%; height: 100%; position: relative">
+                <div class="Rectangle29" style="width: 480px; height: 89.10px; left: 0px; top: 0px; position: absolute; background: #FF8912"></div>
+                <div class="Activities" style="width: 281.41px; left: 99.79px; top: 23.06px; position: absolute; text-align: center; color: white; font-size: 36px; font-family: Raleway; font-weight: 800; word-wrap: break-word">ATTRACTIONS</div>
+            </div>
+
+            <div class ="ActBtn">
+                <div class="Rectangle35"></div>
+                <img id="SiargaoIslandHopping41" src="/static/images/Activities_Attractions/boracay-2.jpg" />
+                
+                <div id="ActivitiesBtn">
+                <div class="Rectangle29" ></div>
+                <div id="Activities">ACTIVITIES</div>
                 </div>
             </div>
-       
-   <!-- Recommended Section -->
-<div class="recommended-section">
-    <h2>Recommended</h2>
-    <p id="rP"><span style="font-weight: bolder;">Lorem ipsum dolor </span> sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. </p>
-    <br>
-    <div class="recommended-carousel">
-        <!--Attractions-->
-        <div class="carousel-content active" data-category="attractions">
-            <a class="tab-landscape tab-attractions" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Attraction Image">
-                    <p class="tab-text">Attraction Name</p>
-                </div>
-            </a>
-
-            <a class="tab-landscape tab-attractions" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Attraction Image">
-                    <p class="tab-text">Attraction Name</p>
-                </div>
-            </a>
-
-            <a class="tab-landscape tab-attractions" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Attraction Image">
-                    <p class="tab-text">Attraction Name</p>
-                </div>
-            </a>
-
-            <a class="tab-landscape tab-attractions" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Attraction Image">
-                    <p class="tab-text">Attraction Name</p>
-                </div>
-            </a>
-        </div>        
-        <!--Activities-->
-        <div class="carousel-content" data-category="activities">
-            <a class="tab-landscape tab-activities" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Activity Image">
-                    <p class="tab-text">Activity Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-activities" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Activity Image">
-                    <p class="tab-text">Activity Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-activities" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Activity Image">
-                    <p class="tab-text">Activity Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-activities" href="/item">
-                <div class="tab-cosntent">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Activity Image">
-                    <p class="tab-text">Activity Name</p>
-                </div>
-            </a>
         </div>
-        <!--Events-->
-        <div class="carousel-content" data-category="events">
-            <a class="tab-landscape tab-events" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Event Image">
-                    <p class="tab-text">Event Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-events" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Event Image">
-                    <p class="tab-text">Event Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-events" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Event Image">
-                    <p class="tab-text">Event Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-events" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Event Image">
-                    <p class="tab-text">Event Name</p>
-                </div>
-            </a>
-            
-        </div>
-        <!--Fooood-->
-        <div class="carousel-content" data-category="food">
-            <a class="tab-landscape tab-food" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Food Image">
-                    <p class="tab-text">Food Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-food" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Food Image">
-                    <p class="tab-text">Food Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-food" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Food Image">
-                    <p class="tab-text">Food Name</p>
-                </div>
-            </a>
-            <a class="tab-landscape tab-food" href="/item">
-                <div class="tab-content">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=" alt="Food Image">
-                    <p class="tab-text">Food Name</p>
-                </div>
-            </a>
-        </div>
-        <!--<div class="carousel-navigation">
-            <button class="carousel-prev" onclick="prevCarousel()">
-                <img src="/static/icons/arrow-circle-left.svg" alt="Previous">
-            </button>
-            <button class="carousel-next" onclick="nextCarousel()">
-                <img src="/static/icons/arrow-circle-right.svg" alt="Next">
-            </button>
-        </div>-->
-    </div>
-</div>
-
-
-<script src="{{ url_for('static', filename='js/carousel.js') }}" defer></script>
-</body>
+    </body>
 </html>

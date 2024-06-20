@@ -1,29 +1,3 @@
-.gunita-logo {
-  width: 118px;
-  height: 128px;
-  background: url("../images/gunita-logo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 266px;
-  left: 1278px;
-  overflow: hidden;
-}
-.gunita-desc {
-  width: 195px;
-  height: 90px;
-  background: url("../images/gunita-desc.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 291px;
-  left: 1406px;
-  overflow: hidden;
-}
   .greybackdrop {
     width: 775px;
     height: 662px;
@@ -32,6 +6,32 @@
     position: absolute;
     top: 435px;
     left: 1065px;
+  }
+  .gunita-logo {
+    width: 118px;
+    height: 128px;
+    background: url("../images/gunita-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 266px;
+    left: 1278px;
+    overflow: hidden;
+  }
+  .gunita-desc {
+    width: 195px;
+    height: 90px;
+    background: url("../images/gunita-desc.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 291px;
+    left: 1406px;
+    overflow: hidden;
   }
   .username-text {
     width: 125px;

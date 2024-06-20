@@ -13,3 +13,4 @@ function scrollRight() {
         behavior: 'smooth'
     });
 }
+

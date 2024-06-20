@@ -1,97 +1,123 @@
-
-
+* {
+  box-sizing: border-box;
+}
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
+  font-size: 14px;
 }
 
+.item1h { grid-area: logo1; }
+.item2h { grid-area: logo2; }
+.item3h { grid-area: searchbar; }
+.item4h { grid-area: myprofile; }
+.item5h { grid-area: logout; }
 
 .grid-containerh {
-  display: grid;
-  grid-template-areas: 
-      'itsmorefun hgunita-logo searchbar myprofile logout';
-  grid-template-columns: auto 150px 1fr auto auto;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-bottom: 2px solid #ddd;
-  height:80px ;
+display: grid;
+grid-template-areas:
+  'logo1 logo2 searchbar myprofile logout';
+gap: 1px;
+padding: 1px;
 }
 
-/* Search Bar */
+.grid-container > div {
+background-color: rgba(255, 255, 255, 0.8);
+}
+
+.itsmorefun {
+  width: 264px;
+  height: 84px;
+  background: url("../images/itsmorefun.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+.hgunita-logo {
+  width: 78px;
+  height: 84px;
+  background: url("../images/gunita-logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
 .header-searchbar {
-  display: flex;
-  align-items: center;
-  position: relative;
+  width: 1050px;
+  height: 71px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  border: 1px solid rgba(26,64,188,1);
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
 }
-
 .input-searchbar {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #1A40BC;
-  border-radius: 20px;
-  outline: none;
-  font-size: 14px;
-  height: 30px;
-}
-
-
-.icon-search {
-  position: absolute;
-  right: 10px;
-  background: url('/static/icons/search-normal.svg') no-repeat center center;
-  background-size: contain;
-  width: 30px;
-  height: 30px;
+  width: 89%;
+  height: 100%;
+  color: rgba(26,64,188,0.5);
+  font-family: Raleway;
+  font-weight: Light Italic;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
   border: none;
-  cursor: pointer;
 }
-
-/* Profile and Logout Links */
-.profLogoTxt {
-  color: #1A40BC;
-  font-weight: bolder;
+.icon-search {
+  width: 44px;
+  height: 44px;
+  background: url("../images/icon/icon-search.png");
+  opacity: 1;
+  border: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-.logoutLogoTxt {
-  color: #FF5C64;
-  font-weight: bolder;
-}
-
-.nav-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-  margin-left: 15px;
-}
-
-.nav-link img {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Logos */
-.item1h {
-  grid-area: itsmorefun;
-  width: 150px;
-  height: 50px;
-  background: url('/static/images/ITSMOREFUNLOGO.png') no-repeat center center;
-  background-size: contain;
-}
-
-.item2h {
-  grid-area: hgunita-logo;
+.icon-myprofile {
   width: 50px;
+  height: 49px;
+  background: url("../images/icon/icon-myprofile.png");
+  opacity: 1;
+  background-position: center center;
+  background-repeat: repeat;
+  margin-left: 55px;
+}
+.text-myprofile {
+  color: rgba(26,64,188,1);
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 24px;
+  opacity: 1;
+  text-align: center;
+  text-decoration: none;
+}
+.text-myprofile:visited{
+  text-decoration: none;
+}
+.icon-logout {
+  width: 49px;
   height: 50px;
-  background: url('/static/images/gunita-logo.png') no-repeat center center;
-  background-size: contain;
+  background: url("../images/icon/icon-logout.png");
+  opacity: 1;
+  background-position: center center;
+  position: relative;
+  margin-left: 35px;
+}
+.text-logout {
+  color: rgba(255,92,100,1);
+  font-family: Poppins;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+}
+.text-logout:visited{
+  text-decoration: none;
+}
+*:focus {
+  outline: none;
 }
