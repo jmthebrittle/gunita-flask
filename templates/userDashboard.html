@@ -40,7 +40,7 @@
         <a href="/food" class="bcolor4 bannertext">FOOD</a>
     </div>
 
-    <!-- Banner -->
+    <!-- Banner Img -->
     <div class="banner">
         <img src="{{ url_for('static', filename='images/Activities_Attractions/mt-pulag-2.jpg') }}" alt="Banner" class="banner-img">
         <h1 class="banner-title">My Dashboard</h1>
@@ -48,7 +48,6 @@
 
     <!-- Main Content -->
     <div class="itempage">
-        <!-- Sidebar -->
         <div class="sidebar">
             <h2>My Saved Items</h2>
             <ul>
@@ -59,30 +58,20 @@
             </ul>
             <button class="signout">Sign Out</button>
         </div>
-
-        <!-- Saved Items Section -->
         <div class="content">
             {% for favorite in favorites %}
                 <div id="saved-{{ favorite.category }}" class="saved-items">
                     <h3>Saved {{ favorite.category.capitalize() }}</h3>
                     <div class="tab-container">
-                        <div class="carousel-btn prev">
-                            <img src="{{ url_for('static', filename='icons/arrow-circle-left.svg') }}" alt="Previous">
-                        </div>
-                        <a class="tab-portrait tab-{{ favorite.category }}" href="/item">
+                        <a class="tab-portrait tab-{{ favorite.category }}" href="#">
                             <div class="tab-content">
-                                <form action="{{ url_for('remove_item', id=favorite.id) }}" method="post">
-                                    <button type="submit" class="heart-icon-container active">
-                                        <img src="{{ url_for('static', filename='icons/heart-tick.svg') }}" alt="Favorited" class="heart-icon">
-                                    </button>
-                                </form>
+                                <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}" onclick="toggleHeart(event, this)">
+                                    <div class="heart-icon"></div>
+                                </div>
                                 <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
                                 <p class="tab-text">{{ favorite.text }}</p>
                             </div>
                         </a>
-                        <div class="carousel-btn next">
-                            <img src="{{ url_for('static', filename='icons/arrow-circle-right.svg') }}" alt="Next">
-                        </div>
                     </div>
                 </div>
             {% endfor %}
