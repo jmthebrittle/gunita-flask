@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     setupHeartIcons();
-    setupModal();
+    setupModals();
 });
 
 function setupHeartIcons() {
@@ -17,31 +17,24 @@ function setupHeartIcons() {
     });
 }
 
-function setupModal() {
-    const modal = document.getElementById('confirmationModal');
-    const span = modal.querySelector('.close');
-    const confirmBtn = document.getElementById('confirmRemove');
-    const cancelBtn = document.getElementById('cancelRemove');
+function setupModals() {
+    const confirmModal = document.getElementById('confirmationModal');
+    confirmModal.confirmBtn = document.getElementById('confirmRemove');
+    confirmModal.cancelBtn = document.getElementById('cancelRemove');
+    confirmModal.closeBtn = document.getElementById('closeConfirmModal');
 
-    span.onclick = function() {
-        modal.style.display = 'none';
-    }
+    confirmModal.closeBtn.onclick = () => {
+        confirmModal.style.display = 'none';
+    };
+    confirmModal.cancelBtn.onclick = () => {
+        confirmModal.style.display = 'none';
+    };
 
-    cancelBtn.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+    window.onclick = (event) => {
+        if (event.target === confirmModal) {
+            confirmModal.style.display = 'none';
         }
-    }
-
-    confirmBtn.onclick = function() {
-        const item = modal.currentItem;
-        removeFavorite(item);
-        modal.style.display = 'none';
-    }
+    };
 }
 
 function confirmRemoval(event, element) {
@@ -50,13 +43,28 @@ function confirmRemoval(event, element) {
 
     const modal = document.getElementById('confirmationModal');
     modal.style.display = 'block';
-    modal.currentItem = element.closest('.tab-content');
-}
+    modal.currentItem = element.closest('.tab-item');
 
-function removeFavorite(element) {
-    toggleFavorite(null, element.querySelector('.heart-icon-container'), false);
-    // Remove the item from the UI
-    element.closest('.tab-portrait').remove();
+    modal.confirmBtn.onclick = () => {
+        const itemData = {
+            img: modal.currentItem.querySelector('img').src,
+            text: modal.currentItem.querySelector('.tab-text').innerText,
+            category: modal.currentItem.querySelector('.heart-icon-container').dataset.category
+        };
+
+        
+        modal.currentItem.remove();
+        
+        // Send delete request
+        removeItem(itemData).then(response => {
+            if (response.status === 'success') {
+                modal.style.display = 'none';
+                alert('Item removed from the dashboard.'); 
+            } else {
+                alert('Failed to remove the item.'); 
+            }
+        });
+    };
 }
 
 function toggleFavorite(event, element, adding) {
@@ -68,12 +76,12 @@ function toggleFavorite(event, element, adding) {
     element.classList.toggle('active', adding);
     const isSaved = element.classList.contains('active');
 
-    const tab = element.closest('.tab-content');
+    const tab = element.closest('.tab-item');
     const itemData = {
         img: tab.querySelector('img').src,
         text: tab.querySelector('.tab-text').innerText,
         category: tab.closest('a').classList.contains('tab-activities') ? 'activities' :
-                  tab.closest('a').classList.contains('tab-attraction') ? 'attractions' :
+                  tab.closest('a').classList.contains('tab-attractions') ? 'attractions' :
                   tab.closest('a').classList.contains('tab-events') ? 'events' :
                   'food'
     };
@@ -81,7 +89,6 @@ function toggleFavorite(event, element, adding) {
     if (isSaved) {
         saveItem(itemData);
     } else {
-        // Make sure the item is removed from the backend
         removeItem(itemData);
     }
 }
@@ -97,14 +104,16 @@ function saveItem(itemData) {
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            location.reload();  // Reload to fetch new data
+            location.reload();
+        } else {
+            alert('Failed to add the item to the dashboard.'); 
         }
     });
 }
 
 function removeItem(itemData) {
-    fetch('/remove_item', {
-        method: 'POST',
+    return fetch('/remove_item', {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -113,7 +122,9 @@ function removeItem(itemData) {
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            // No need to reload the page; we already removed the item from the UI
+            location.reload();  
+        } else {
+            alert('Failed to remove the item from the dashboard.'); 
         }
     });
 }

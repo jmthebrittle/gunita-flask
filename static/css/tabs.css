@@ -3,7 +3,7 @@
     width: 400px;
     height: 250px;
     font-family: Raleway;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 24px;
     color: #fff;
     display: grid;
@@ -13,6 +13,21 @@
     position: relative;
     background-color: #333; 
 }
+
+.tab-landscape.tab-attractions {
+    background-color: #FF8912;
+}
+.tab-landscape.tab-activities {
+    background-color: #FFCD05;
+}
+.tab-landscape.tab-events {
+    background-color: #1A40BC;
+}
+
+.tab-landscape.tab-food {
+    background-color: #FF5C64;
+}
+
 
 .tab-image-l {
     grid-area: tab-image;
@@ -57,20 +72,21 @@
     border-top-right-radius: 15px;
 }
 
+
 /* Category Colors */
-.tab-attraction, .tab-landscape.tab-attraction {
+.tab-attractions{
     background-color: #FF8912;
 }
 
-.tab-activities, .tab-landscape.tab-activities {
+.tab-activities{
     background-color: #FFCD05;
 }
 
-.tab-events, .tab-landscape.tab-events {
+.tab-events{
     background-color: #1A40BC;
 }
 
-.tab-food, .tab-landscape.tab-food {
+.tab-food{
     background-color: #FF5C64;
 }
 

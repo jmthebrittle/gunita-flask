@@ -1,69 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-    setupHeartIcons();
-});
-
-function setupHeartIcons() {
-    const heartIcons = document.querySelectorAll('.heart-icon-container');
-    heartIcons.forEach(icon => {
-        icon.addEventListener('click', (event) => {
-            const isAdding = !icon.classList.contains('active');
-            toggleFavorite(event, icon, isAdding);
-        });
-    });
-}
-
-function toggleFavorite(event, element, adding) {
+function toggleHeart(event, element) {
     event.preventDefault();
     event.stopPropagation();
 
-    const tab = element.closest('.tab-content');
-    const itemData = {
-        img: element.getAttribute('data-img'),
-        text: element.getAttribute('data-text'),
-        category: element.getAttribute('data-category')
-    };
+    const heartContainer = element.closest('.heart-icon-container');
+    const isSaved = heartContainer.classList.contains('active');
+    const img = heartContainer.dataset.img;
+    const text = heartContainer.dataset.text;
+    const category = heartContainer.dataset.category;
 
-    element.classList.toggle('active', adding);
+    const itemData = { img, text, category };
 
-    if (adding) {
-        saveItem(itemData);
+    if (isSaved) {
+        if (confirm('Are you sure you want to remove this item from your dashboard?')) {
+            removeItem(itemData).then(response => {
+                if (response.status === 'success') {
+                    heartContainer.classList.remove('active');
+                    alert('Item removed successfully.');
+                } else {
+                    alert('Failed to remove the item.');
+                }
+            });
+        }
     } else {
-        removeItem(itemData);
+        saveItem(itemData).then(response => {
+            if (response.status === 'success') {
+                heartContainer.classList.add('active');
+                alert('Item added to dashboard.');
+            } else {
+                alert('Failed to save the item.');
+            }
+        });
     }
 }
 
 function saveItem(itemData) {
-    fetch('/add_item', {
+    console.log('Saving item:', itemData); 
+    return fetch('/add_item', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(itemData)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Item saved:', data);
-        // Optionally update UI here
-    })
-    .catch(error => {
-        console.error('Error saving item:', error);
-    });
+    .then(response => response.json());
 }
 
 function removeItem(itemData) {
-    fetch('/remove_item', {
+    console.log('Removing item:', itemData); 
+    return fetch('/remove_item', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(itemData)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Item removed:', data);
-        // Optionally update UI here
-    })
-    .catch(error => {
-        console.error('Error removing item:', error);
-    });
+    .then(response => response.json());
 }
