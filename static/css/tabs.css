@@ -59,13 +59,12 @@
 }
 
 /* Category Colors */
-.tab-attraction, .tab-landscape.tab-attraction {
+.tab-attractions, .tab-landscape.tab-attractions {
     background-color: #FF8912;
 }
 
 .tab-activities, .tab-landscape.tab-activities {
     background-color: #FFCD05;
- 
 
 }
 
@@ -75,10 +74,6 @@
 
 .tab-food, .tab-landscape.tab-food {
     background-color: #FF5C64;
-}
-
-tab-landscape.tab-attraction{
-    background-color: #FF8912;
 }
 
 /* Heart Icon*/

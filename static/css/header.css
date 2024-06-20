@@ -1,4 +1,13 @@
-/* Grid Layout for Header */
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+
 .grid-containerh {
   display: grid;
   grid-template-areas: 
