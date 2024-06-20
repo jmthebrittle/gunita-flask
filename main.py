@@ -128,7 +128,7 @@ def get_items():
     items = [favorite.to_dict() for favorite in favorites]
     return jsonify(items)
 
-#For dynamic banner image change per pager
+#For dynamic banner image change per pages
 @app.route('/category/<category_name>')
 def category_page(category_name):
     images = {
@@ -167,27 +167,27 @@ def homepage():
 def events_page():
     image_url = '/static/images/Events/boracay-dragon-boat-fest-2.jpg'
     page_title = 'EVENTS'
-    return render_template('EventPage.html', image_url=image_url, page_title=page_title)
+    return render_template('mainEventPage.html', image_url=image_url, page_title=page_title)
 
 @app.route('/attractions')
 def attracttions_page():
     image_url = '/static/images/Activities_Attractions/mt-pulag-1.jpg'
     page_title = 'ATTRACTIONS'
-    return render_template('AttractionPage.html', image_url=image_url, page_title=page_title)
+    return render_template('mainAttractionPage.html', image_url=image_url, page_title=page_title)
 
 
 @app.route('/activities')
 def activities_page():
     image_url = '/static/images/Activities_Attractions/siargao-maasin-river-swing-4.jpg'
     page_title = 'ACTIVITIES'
-    return render_template('ActivitiesPage.html', image_url=image_url, page_title=page_title)
+    return render_template('mainActivitiesPage.html', image_url=image_url, page_title=page_title)
 
 
 @app.route('/food')
 def food_page():
     image_url = '/static/images/Food/arrowroot-cookies-1.jpg'
     page_title = 'FOOD'
-    return render_template('FoodPage.html', image_url=image_url, page_title=page_title)
+    return render_template('mainFoodPage.html', image_url=image_url, page_title=page_title)
 
 #John's attempt of a database showing on screen
 @app.route('/GetEventByID/<int:id_data>', methods = ['POST','GET'])
@@ -199,7 +199,7 @@ def GetEventByID(id_data):
     cur.execute("SELECT * FROM events WHERE evID = ?", (id_data,))
     rows = cur.fetchall();
     #flash(rows)
-    return render_template("Itempage-Event.html", rows = rows)
+    return render_template("catIndivEvent.html", rows = rows)
 
 if __name__ == '__main__':
     with app.app_context():
