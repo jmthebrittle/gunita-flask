@@ -12,25 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-          <!-- Header -->
-<div class="header">
-    <div class="grid-containerh">
-        <div class="item1h"></div>
-        <a href="/"><div class="item2h"></div></a>
-        <div class="header-searchbar">
-            <input type="text" class="input-searchbar" placeholder="Start typing something..." name="search">
-            <button type="submit" class="icon-search"></button>
-        </div>
-        <a href="/profile" class="nav-link">
-            <img src="/static/icons/profile-circle.svg" alt="Profile">
-            <span class="profLogoTxt">My Profile</span>
-        </a>
-        <a href="/logout" class="nav-link" >
-            <img src="/static/icons/logout.svg" alt="Logout">
-            <span class="logoutLogoTxt">Logout</span>
-        </a>
-    </div>
-</div>
+    <!-- Header -->
+    {% include 'header.html' %}
+  
 
     <!-- Banner Area -->
     <div class="BannerArea">
@@ -59,23 +43,114 @@
             <button class="signout">Sign Out</button>
         </div>
         <div class="content">
-            {% for favorite in favorites %}
-                <div id="saved-{{ favorite.category | default('uncategorized') }}" class="saved-items">
-                    <h3>Saved {{ favorite.category | default('Uncategorized') | capitalize }}</h3>
-                    <div class="tab-container">
-                        <a class="tab-portrait tab-{{ favorite.category | default('uncategorized') }}" href="#">
-                            <div class="tab-content">
-                                <div class="heart-icon-container active" data-img="{{ favorite.img | default('') }}" data-text="{{ favorite.text | default('No Title') }}" data-category="{{ favorite.category | default('uncategorized') }}" onclick="toggleHeart(event, this)">
-                                    <div class="heart-icon"></div>
-                                </div>
-                                <img class="tab-image-p" src="{{ favorite.img | default('/static/images/default.png') }}" alt="{{ favorite.text | default('No Title') }}">
-                                <p class="tab-text">{{ favorite.text | default('No Title') }}</p>
+            <div id="saved-attractions" class="saved-items">
+                <h3>Saved Attractions</h3>
+                <div class="tab-container">
+                    
+                    <div class="carousel-wrapper">
+                        {% for favorite in favorites if favorite.category == 'attractions' %}
+                            <div class="tab-item">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                    <div class="tab-content">
+                                        <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
+                                            <div class="heart-icon"></div>
+                                        </div>
+                                        <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
+                                        <p class="tab-text" style="background-color:#FF8912;">{{ favorite.text }}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        {% endfor %}
                     </div>
+                  
                 </div>
-            {% endfor %}
+            </div>
+
+
+            <div id="saved-activities" class="saved-items">
+                <h3>Saved Activities</h3>
+                <div class="tab-container">
+                   
+                    <div class="carousel-wrapper">
+                        {% for favorite in favorites if favorite.category == 'activities' %}
+                            <div class="tab-item">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                    <div class="tab-content">
+                                        <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
+                                            <div class="heart-icon"></div>
+                                        </div>
+                                        <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
+                                        <p class="tab-text" style="background-color:#FFCD05;">{{ favorite.text }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                   
+                </div>
+            </div>
+
+ 
+            <div id="saved-events" class="saved-items">
+                <h3>Saved Events</h3>
+                <div class="tab-container">
+                   
+                    <div class="carousel-wrapper">
+                        {% for favorite in favorites if favorite.category == 'events' %}
+                            <div class="tab-item">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                    <div class="tab-content">
+                                        <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
+                                            <div class="heart-icon"></div>
+                                        </div>
+                                        <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
+                                        <p class="tab-text" style="background-color:#1A40BC;">{{ favorite.text }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                
+                </div>
+            </div>
+
+ 
+            <div id="saved-food" class="saved-items">
+                <h3>Saved Food</h3>
+                <div class="tab-container">
+                   
+                    <div class="carousel-wrapper">
+                        {% for favorite in favorites if favorite.category == 'food' %}
+                            <div class="tab-item">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                    <div class="tab-content">
+                                        <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
+                                            <div class="heart-icon"></div>
+                                        </div>
+                                        <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
+                                        <p class="tab-text" style="background-color:#FF5C64;" >{{ favorite.text }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                
+                </div>
+            </div>
+
+
         </div>
     </div>
+
+<!-- Initial Confirmation Modal -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeConfirmModal">&times;</span>
+        <p>Are you sure you want to remove this item from your dashboard?</p>
+        <button id="confirmRemove" class="confirm-btn">Yes</button>
+        <button id="cancelRemove" class="cancel-btn">No</button>
+    </div>
+</div>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* General */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -7,11 +7,10 @@ body {
 }
 
 
-/* Banner Area */
 .BannerArea {
     display: flex;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .BannerArea a {
@@ -39,7 +38,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 0px;
     margin-bottom: 20px;
     height: 180px; 
     width: 100%; 
@@ -54,7 +53,6 @@ body {
     object-position: center; 
 }
 
-
 .banner-title {
     color: white;
     font-size: 36px;
@@ -63,17 +61,17 @@ body {
     position: absolute;
 }
 
-/* Main Layout */
+
 .itempage {
     display: grid;
     grid-template-areas: 'sidebar content';
     grid-template-columns: 250px 1fr;
     width: 100%;
-    height: calc(100vh - 270px); /* Adjust for header and banner height */
+    height: calc(100vh - 270px); 
     overflow: hidden;
 }
 
-/* Sidebar */
+/* SIDENAV */
 .sidebar {
     grid-area: sidebar;
     background-color: #fff;
@@ -81,9 +79,13 @@ body {
     border-right: 1px solid #ddd;
     height: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
 }
 
 .sidebar h2 {
+    text-align: center;
+    font-weight:700;
     font-size: 20px;
     margin-bottom: 20px;
     color: #333;
@@ -122,7 +124,6 @@ body {
     margin-top: 30px;
 }
 
-/* Main Content */
 .content {
     grid-area: content;
     padding: 20px;
@@ -148,116 +149,56 @@ body {
     text-align: left;
 }
 
+
+
+/*CAROUSEL*/
 .tab-container {
     display: flex;
+    height: 310px;
+    flex-direction: row;
     overflow-x: auto;
     gap: 20px;
     padding-bottom: 10px;
     position: relative;
+    scroll-behavior: smooth;
 }
 
-.tab-item {
-    flex: 0 0 220px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.tab-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.tab-item .tab-text {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-}
-
-.heart-icon-container {
-    width: 32px;
-    height: 32px;
-    background-color: white;
-    border-radius: 50%;
+.carousel-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 
-.heart-icon {
-    width: 20px;
-    height: 20px;
-    background: url('/static/icons/heart-tick.svg') no-repeat center center;
-    background-size: contain;
-}
-
-
-/* Carousel Buttons */
-.carousel-btn {
-    width: 32px;
-    height: 32px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.carousel-btn img {
-    width: 20px;
-    height: 20px;
-}
-
-.carousel-btn.prev {
-    left: -40px;
-}
-
-.carousel-btn.next {
-    right: -40px;
-}
-
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Modal Styles */
-.modal {
+.carousel-wrapper::-webkit-scrollbar { 
     display: none;
-    position: fixed;
-    z-index: 1;
+}
+
+/* Modal Style */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto;
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    text-align: center; /* Center the text */
+    border-radius: 8px;
 }
 
 .close {
@@ -265,6 +206,7 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
@@ -274,19 +216,29 @@ body {
     cursor: pointer;
 }
 
-button {
+.confirm-btn, .cancel-btn {
     padding: 10px 20px;
+    font-size: 16px;
     margin: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button#confirmRemove {
-    background-color: #ff5c64;
+.confirm-btn {
+    background-color: #e74c3c;
     color: white;
 }
 
-button#cancelRemove {
-    background-color: #ddd;
+.cancel-btn {
+    background-color: #ecf0f1;
+    color: black;
+}
+
+.confirm-btn:hover {
+    background-color: #c0392b;
+}
+
+.cancel-btn:hover {
+    background-color: #bdc3c7;
 }
