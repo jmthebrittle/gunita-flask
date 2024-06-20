@@ -6,7 +6,6 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tabs.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
     <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -17,21 +16,21 @@
    {% include 'header.html' %}
 
     <!-- NAVBAR -->
-    <div class="BannerArea">
-        <a href="/attractions" class="banner-item attractions">
-            <div class="bannertext">ATTRACTIONS</div>
+    <div class="hBannerArea">
+        <a href="/attractions" class="hbanner-item hattractions">
+            <div class="hbannertext">ATTRACTIONS</div>
             <img src="{{ url_for('static', filename='images/Activities_Attractions/siargao-maasin-river-swing-2.jpg') }}" alt="Attractions">
         </a>
-        <a href="/activities" class="banner-item activities">
-            <div class="bannertext">ACTIVITIES</div>
+        <a href="/activities" class="hbanner-item hactivities">
+            <div class="hbannertext">ACTIVITIES</div>
             <img src="{{ url_for('static', filename='images/Activities_Attractions/siargao-island-hopping-4.jpg') }}" alt="Activities">
         </a>
-        <a href="/events" class="banner-item events">
-            <div class="bannertext">EVENTS</div>
+        <a href="/events" class="hbanner-item hevents">
+            <div class="hbannertext">EVENTS</div>
             <img src="{{ url_for('static', filename='images/Events/boracay-dragon-boat-fest-1.jpg') }}" alt="Events">
         </a>
-        <a href="/food" class="banner-item food">
-            <div class="bannertext">FOOD</div>
+        <a href="/food" class="hbanner-item hfood">
+            <div class="hbannertext">FOOD</div>
             <img src="{{ url_for('static', filename='images/Food/kinilaw-2.jpg') }}" alt="Food">
         </a>
     </div>

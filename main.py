@@ -92,7 +92,7 @@ def dashboard():
     favorites = Favorite.query.all()
     return render_template('userDashboard.html', favorites=favorites)
 
-#Save and Remove Items
+#Save and Remove Items (not working with database yet)
 @app.route('/add_item', methods=['POST'])
 def add_item():
     data = request.json
@@ -106,7 +106,6 @@ def add_item():
     else:
         print("Failed to save item, missing data:", data)  
         return jsonify({'status': 'failed', 'reason': 'Missing data'}), 400
-
 
 @app.route('/remove_item', methods=['DELETE'])
 def remove_item():
@@ -129,25 +128,66 @@ def get_items():
     items = [favorite.to_dict() for favorite in favorites]
     return jsonify(items)
 
+#For dynamic banner image change per pager
+@app.route('/category/<category_name>')
+def category_page(category_name):
+    images = {
+        'attractions': 'images/Activities_Attractions/mt-pulag-1.jpg',
+        'activities': 'images/Activities_Attractions/siargao-maasin-river-swing-4.jpg',
+        'events': 'images/Events/boracay-dragon-boat-fest-2.jpg',
+        'food': 'images/Food/arrowroot-cookies-1.jpg'
+    }
+    
+    titles = {
+        'attractions': 'ATTRACTIONS',
+        'activities': 'ACTIVITIES',
+        'events': 'EVENTS',
+        'food': 'FOOD'
+    }
+    
+    templates = {
+        'attractions': 'attractions.html',
+        'activities': 'activities.html',
+        'events': 'events.html',
+        'food': 'food.html'
+    }
+    
+    image_url = images.get(category_name, 'default-image.jpg')
+    page_title = titles.get(category_name, 'DEFAULT TITLE')
+    template = templates.get(category_name, 'base_template.html')
+    
+    return render_template(template, image_url=image_url, page_title=page_title)
+
+
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
 
 @app.route('/events')
-def events():
-    return render_template('EventPage.html')
+def events_page():
+    image_url = '/static/images/Events/boracay-dragon-boat-fest-2.jpg'
+    page_title = 'EVENTS'
+    return render_template('EventPage.html', image_url=image_url, page_title=page_title)
 
 @app.route('/attractions')
-def attractions():
-    return render_template('AttractionPage.html')
+def attracttions_page():
+    image_url = '/static/images/Activities_Attractions/mt-pulag-1.jpg'
+    page_title = 'ATTRACTIONS'
+    return render_template('AttractionPage.html', image_url=image_url, page_title=page_title)
+
 
 @app.route('/activities')
-def activities():
-    return render_template('ActivitiesPage.html')
+def activities_page():
+    image_url = '/static/images/Activities_Attractions/siargao-maasin-river-swing-4.jpg'
+    page_title = 'ACTIVITIES'
+    return render_template('ActivitiesPage.html', image_url=image_url, page_title=page_title)
+
 
 @app.route('/food')
-def food():
-    return render_template('FoodPage.html')
+def food_page():
+    image_url = '/static/images/Food/arrowroot-cookies-1.jpg'
+    page_title = 'FOOD'
+    return render_template('FoodPage.html', image_url=image_url, page_title=page_title)
 
 if __name__ == '__main__':
     with app.app_context():

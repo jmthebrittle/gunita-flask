@@ -9,7 +9,8 @@
     <link href="/static/css/tabs.css" rel="stylesheet" />
     <link href="/static/css/footer.css" rel="stylesheet" />
     <link href="/static/css/categories.css" rel="stylesheet" />
-    <title>Gunita - Events Page</title>
+    <title>{{ events }}</title>
+
     <style>
         .tab-content {
             position: relative;
@@ -56,19 +57,12 @@
     </style>
 </head>
 <body>
-    <div class="itempage">
-    <!-- Header -->
-   {% include 'header.html' %}
-        <div class="BannerArea">
-            <div class="bcolor1"><a href="/attractions" class="bannertext">ATTRACTTIONS</a></div>
-            <div class="bcolor2"><a href="/activities" class="bannertext">ACTIVITIES</a></div>
-            <div class="bcolor3"><a href="/events" class="bannertext">EVENTS</a></div>
-            <div class="bcolor4"><a href="/food" class="bannertext">FOOD</a></div>
-        </div>
-        <div class="BannerEvents">
-            <p class="bannerdescription">EVENTS</p>
-        </div>
-
+<!-- Header -->
+{% include 'header.html' %}
+<!-- Nav&Banner -->
+{% include 'navwithBanner.html' %}
+<!--Main content-->
+<div class="itempage">
         <div class="itemarea catinformation">
             <h1 class="ititle textevents">Event Name</h1><h3 class="alttitle">(alternative name)</h3>
             <img class="infoimage" src="https://www.judethetourist.com/wp-content/uploads/2023/08/bangus2023-93-1024x683.webp">

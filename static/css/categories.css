@@ -1,8 +1,11 @@
 .catinformation {
     display: grid;
     grid-template-areas: 'ititle alttitle' 'infoimage infoimage' 'region region' 'idescription idescription';
-    width: 1300px;
+    width: auto;
     height: 100%;
+    margin-right:20px;
+    margin-left: 20px;
+    padding: 10px;
 }
 
 .ititle {
@@ -28,9 +31,9 @@
 
 .infoimage {
     grid-area: infoimage;
-    height: 600px;
+    height: auto;
     object-fit: cover;
-    width: 100%;
+    width: 250px;
 }
 
 .region {

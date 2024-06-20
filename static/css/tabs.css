@@ -3,7 +3,7 @@
     width: 400px;
     height: 250px;
     font-family: Raleway;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 24px;
     color: #fff;
     display: grid;
@@ -13,21 +13,6 @@
     position: relative;
     background-color: #333; 
 }
-
-.tab-landscape.tab-attractions {
-    background-color: #FF8912;
-}
-.tab-landscape.tab-activities {
-    background-color: #FFCD05;
-}
-.tab-landscape.tab-events {
-    background-color: #1A40BC;
-}
-
-.tab-landscape.tab-food {
-    background-color: #FF5C64;
-}
-
 
 .tab-image-l {
     grid-area: tab-image;
@@ -61,6 +46,7 @@
     border-radius: 15px;
     text-decoration: none;
     position: relative;
+ 
 }
 
 .tab-image-p {
@@ -72,22 +58,27 @@
     border-top-right-radius: 15px;
 }
 
-
 /* Category Colors */
-.tab-attractions{
+.tab-attraction, .tab-landscape.tab-attraction {
     background-color: #FF8912;
 }
 
-.tab-activities{
+.tab-activities, .tab-landscape.tab-activities {
     background-color: #FFCD05;
+ 
+
 }
 
-.tab-events{
+.tab-events, .tab-landscape.tab-events {
     background-color: #1A40BC;
 }
 
-.tab-food{
+.tab-food, .tab-landscape.tab-food {
     background-color: #FF5C64;
+}
+
+tab-landscape.tab-attraction{
+    background-color: #FF8912;
 }
 
 /* Heart Icon*/

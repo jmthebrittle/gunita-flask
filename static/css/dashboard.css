@@ -67,7 +67,7 @@ body {
     grid-template-areas: 'sidebar content';
     grid-template-columns: 250px 1fr;
     width: 100%;
-    height: calc(100vh - 270px); 
+    height: calc(100vh - 270px); /* Adjust for header and banner height */
     overflow: hidden;
 }
 

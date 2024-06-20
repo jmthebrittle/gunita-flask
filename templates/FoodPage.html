@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Page</title>
+    <title>{{ food }}</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
@@ -47,22 +47,15 @@
     </style>
 </head>
 <body>
-    <div class="itempage">
-    <!-- Header -->
-   {% include 'header.html' %}
-        <div class="BannerArea">
-            <div class="bcolor1"><a href="/attractions" class="bannertext">ATTRACTTIONS</a></div>
-            <div class="bcolor2"><a href="/activities" class="bannertext">ACTIVITIES</a></div>
-            <div class="bcolor3"><a href="/events" class="bannertext">EVENTS</a></div>
-            <div class="bcolor4"><a href="/food" class="bannertext">FOOD</a></div>
-        </div>
-        <div class="BannerEvents">
-            <p class="bannerdescription">FOOD</p>
-        </div>
-
+<!-- Header -->
+{% include 'header.html' %}
+<!-- Nav&Banner -->
+{% include 'navwithBanner.html' %}
+<!--Main content-->
+<div class="itempage">
         <div class="itemarea catinformation">
             <h1 class="ititle textevents">Food Name</h1><h3 class="alttitle">(alternative name)</h3>
-            <img class="infoimage" src="https://www.example.com/image-path.jpg">
+            <img class="infoimage" src="/static/images/Food/pakbet-1.jpg">
             <h2 class="region textevents">Region Goes Here</h2>
             <p class="idescription">Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. 
 

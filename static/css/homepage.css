@@ -7,16 +7,18 @@ body {
 }
 
 
-/*banner images/navbar*/
-
-.BannerArea {
+/* Banner Area */
+.hBannerArea {
     display: flex;
     justify-content: space-between;
+    width: auto;
     height: 500px;
-    margin-bottom: 20px;
+    margin: 0; 
+    padding: 0; 
 }
 
-.banner-item {
+
+.hbanner-item {
     position: relative;
     width: 24%;
     height: 100%;
@@ -25,9 +27,10 @@ body {
     text-decoration: none;
     color: white;
     transition: transform 0.3s ease;
+    box-sizing: border-box; 
 }
 
-.banner-item img {
+.hbanner-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -38,11 +41,11 @@ body {
     left: 0;
 }
 
-.banner-item:hover img {
+.hbanner-item:hover img {
     transform: scale(1.05);
 }
 
-.bannertext {
+.hbannertext {
     position: relative;
     top: 0;
     width: 100%;
@@ -55,23 +58,21 @@ body {
     z-index: 1;
 }
 
-.banner-item.attractions .bannertext {
+.hbanner-item.hattractions .hbannertext {
     background-color: #FF8912;
 }
 
-.banner-item.activities .bannertext {
+.hbanner-item.hactivities .hbannertext {
     background-color: #FFCD05;
 }
 
-.banner-item.events .bannertext {
+.hbanner-item.hevents .hbannertext {
     background-color: #1A40BC;
 }
 
-.banner-item.food .bannertext {
+.hbanner-item.hfood .hbannertext {
     background-color: #FF5C64;
 }
-
-
 .main-content {
     padding: 20px;
     width: 100%;
