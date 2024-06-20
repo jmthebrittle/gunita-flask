@@ -54,7 +54,7 @@ def create_user():
             msg = f"Operational error: {e}"
             con.rollback()
         finally:
-            return render_template("createUser.html", msg=msg)
+            return render_template("login.html", msg=msg)
     else:
         return render_template("SignUp.html")
 
