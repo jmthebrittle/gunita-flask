@@ -131,7 +131,12 @@
   font-family: Poppins;
 }
 
-.stext { grid-area: stext; font-family: Raleway; font-size: 24; font-weight: bold; text-align: center; height: 20px; }
+.stext { grid-area: stext; 
+  font-family: Raleway; 
+  font-size: 24px; 
+  font-weight: bold; 
+  text-align: center; 
+  height: auto; }
 .tab1 { grid-area: tab1;}
 .tab2 { grid-area: tab2;}
 .tab3 { grid-area: tab3;}
@@ -150,7 +155,7 @@
     'tab1 tab2'
     'tab3 tab4'
     'tab5 tab6';
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
   height: auto;
 }
