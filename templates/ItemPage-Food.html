@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+        <link href="/static/css/header.css" rel="stylesheet" />
+        <link href="/static/css/layout-itempage.css" rel="stylesheet" />
+        <link href="/static/css/tabs.css" rel="stylesheet" />
+        <link href="/static/css/footer.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="infopage">
+                {% include 'header.html' %}
+
+            <div class="BannerArea">
+                <div class="bcolor1"><a href="/attractions" class="bannertext">ATTRACTTIONS</a></div>
+                <div class="bcolor2"><a href="/" class="bannertext">ACTIVITIES</a></div>
+                <div class="bcolor3"><a href="/" class="bannertext">EVENTS</a></div>
+                <div class="bcolor4"><a href="/" class="bannertext">FOOD</a></div>
+            </div>
+
+            <div class="infoarea">
+                {% include 'infoset-attractions.html' %}
+            </div>
+            
+            <div class="suggestions-infopage">
+                <p class="stext">You can also try:</p>
+                <div class="tab-landscape tab1 tab-attraction">
+                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=">
+                    <p class="tab-text">Banaue Rice Terraces</p>
+                </div>
+                <div class="tab-landscape tab2 tab-attraction">
+                    <img class="tab-image-l" src="https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg">
+                    <p class="tab-text">A tab goes here</p>
+                </div>
+                <div class="tab-landscape tab3 tab-attraction">
+                    <img class="tab-image-l" src="https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg">
+                    <p class="tab-text">A tab goes here</p>
+                </div>
+                <div class="tab-landscape tab4 tab-attraction">
+                    <img class="tab-image-l" src="https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/Philippines-small-640x480_0.jpg">
+                    <p class="tab-text">A tab goes here</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="grid-containerf">
+                    <div class="item3f"></div>
+                    <div class="flogo1 logo1"></div>
+                    <div class="flogo2 logo2"></div>
+                </div>
+            </div>
+          </div>
+    </body>
+</html>
