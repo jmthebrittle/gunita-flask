@@ -30,7 +30,7 @@
 
 .infoimage {
     grid-area: infoimage;
-    height: auto;
+    height: 300px;
     object-fit: cover;
     width: 150px;
 }
