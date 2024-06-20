@@ -189,6 +189,18 @@ def food_page():
     page_title = 'FOOD'
     return render_template('FoodPage.html', image_url=image_url, page_title=page_title)
 
+#John's attempt of a database showing on screen
+@app.route('/GetEventByID/<int:id_data>', methods = ['POST','GET'])
+def GetEventByID(id_data):
+    #flash(id_data)
+    con = sql.connect("gunita.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM events WHERE evID = ?", (id_data,))
+    rows = cur.fetchall();
+    #flash(rows)
+    return render_template("Itempage-Event.html", rows = rows)
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
