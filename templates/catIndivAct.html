@@ -21,27 +21,39 @@
             </div>
 
             <div class="infoarea">
-                {% include 'infoset-events.html' %}
+                {% include 'infoset-activities.html' %}
             </div>
             
             <div class="suggestions-infopage">
                 <p class="stext">You can also try:</p>
-                <div class="tab-landscape tab1 tab-activities">
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=">
-                    <p class="tab-text">Banaue Rice Terraces</p>
-                </div>
-                <div class="tab-landscape tab2 tab-activities">
-                    <img class="tab-image-l" src="https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
-                <div class="tab-landscape tab3 tab-activities">
-                    <img class="tab-image-l" src="https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
-                <div class="tab-landscape tab4 tab-activities">
-                    <img class="tab-image-l" src="https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/Philippines-small-640x480_0.jpg">
-                    <p class="tab-text">A tab goes here</p>
-                </div>
+                <a class="tab-landscape tab1 tab-activities" href="/GetActByID/1">
+                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <img class="tab-image-l" src="https://www.destinationsandtea.com/wp-content/uploads/2023/06/IMG_0038-1.jpg">
+                    <p class="tab-text">Mt. Pulag Hiking</p>
+                </a>
+                <a class="tab-landscape tab2 tab-activities" href="/GetActByID/2">
+                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <img class="tab-image-l" src="https://live.staticflickr.com/7833/32483687247_46c1e2cb7d_b.jpg">
+                    <p class="tab-text">Siargao Island Hopping</p>
+                </a>
+                <a class="tab-landscape tab3 tab-activities" href="/GetActByID/4">
+                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <img class="tab-image-l" src="../static/images/Activities_Attractions/strawberry-picking-1.jpg">
+                    <p class="tab-text">Strawberry Picking</p>
+                </a>
+                <a class="tab-landscape tab4 tab-activities" href="/GetActByID/6">
+                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <img class="tab-image-l" src="https://media.philstar.com/photos/2020/07/01/luneta-park_2020-07-01_14-49-16.jpg">
+                    <p class="tab-text">Historical Sightseeing</p>
+                </a>
             </div>
 
             <div class="footer">

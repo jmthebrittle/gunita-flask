@@ -226,7 +226,7 @@ def GetFoodByID(id_data):
     con = sql.connect("gunita.db")
     con.row_factory = sql.Row
     cur = con.cursor()
-    cur.execute("SELECT * FROM food WHERE attID = ?", (id_data,))
+    cur.execute("SELECT * FROM food WHERE fdID = ?", (id_data,))
     rows = cur.fetchall();
     #flash(rows)
     return render_template("catIndivFood.html", rows = rows)
