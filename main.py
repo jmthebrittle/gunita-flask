@@ -29,7 +29,7 @@ class Favorite(db.Model):
     
 @app.route('/')
 def home():
-    return render_template("LandPage.html")
+    return render_template("homepage.html")
 
 # SIGN UP
 @app.route('/createNewAcc', methods=['GET', 'POST'])
@@ -189,7 +189,27 @@ def food_page():
     page_title = 'FOOD'
     return render_template('mainFoodPage.html', image_url=image_url, page_title=page_title)
 
-#John's attempt of a database showing on screen
+#John's attempt of a database showing on screen (which by the way worked!!!)
+@app.route('/GetAttByID/<int:id_data>', methods = ['POST','GET'])
+def GetAttByID(id_data):
+    #flash(id_data)
+    con = sql.connect("gunita.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM attractions WHERE attID = ?", (id_data,))
+    rows = cur.fetchall();
+    #flash(rows)
+    return render_template("catIndivAtt.html", rows = rows)
+@app.route('/GetActByID/<int:id_data>', methods = ['POST','GET'])
+def GetActByID(id_data):
+    #flash(id_data)
+    con = sql.connect("gunita.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM activities WHERE actID = ?", (id_data,))
+    rows = cur.fetchall();
+    #flash(rows)
+    return render_template("catIndivAct.html", rows = rows)
 @app.route('/GetEventByID/<int:id_data>', methods = ['POST','GET'])
 def GetEventByID(id_data):
     #flash(id_data)
@@ -200,6 +220,16 @@ def GetEventByID(id_data):
     rows = cur.fetchall();
     #flash(rows)
     return render_template("catIndivEvent.html", rows = rows)
+@app.route('/GetFoodByID/<int:id_data>', methods = ['POST','GET'])
+def GetFoodByID(id_data):
+    #flash(id_data)
+    con = sql.connect("gunita.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM food WHERE attID = ?", (id_data,))
+    rows = cur.fetchall();
+    #flash(rows)
+    return render_template("catIndivFood.html", rows = rows)
 
 if __name__ == '__main__':
     with app.app_context():
