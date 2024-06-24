@@ -17,7 +17,6 @@ body {
   padding: 10px 20px;
   background-color: #fff;
   border-bottom: 2px solid #ddd;
-  height:80px ;
 }
 
 /* Search Bar */
@@ -29,12 +28,11 @@ body {
 
 .input-searchbar {
   width: 100%;
-  padding: 8px 10px;
+  padding: 15px 10px;
   border: 1px solid #1A40BC;
   border-radius: 20px;
   outline: none;
   font-size: 14px;
-  height: 30px;
 }
 
 

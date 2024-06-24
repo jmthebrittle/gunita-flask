@@ -6,8 +6,6 @@
     'info'
     'suggestions'
     'footer';
-  gap: 1px;
-  padding: 1px;
 }
 
 .infopage > div {
@@ -34,7 +32,6 @@
 
 .header {
     grid-area: header;
-    
 }
 
 .bcolor1 { grid-area: bcolor1; background-color: #FF8912; }
