@@ -83,7 +83,7 @@ function toggleFavorite(event, element, adding) {
         category: tab.closest('a').classList.contains('tab-activities') ? 'activities' :
                   tab.closest('a').classList.contains('tab-attractions') ? 'attractions' :
                   tab.closest('a').classList.contains('tab-events') ? 'events' :
-                  'food'
+                  'food',
     };
 
     if (isSaved) {

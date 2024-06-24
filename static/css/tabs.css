@@ -1,10 +1,10 @@
 /* Landscape tabs */
 .tab-landscape {
     width: 400px;
-    height: 250px;
+    height: auto;
     font-family: Raleway;
-    font-weight: bolder;
-    font-size: 24px;
+    font-weight: bold;
+    font-size: 22px;
     color: #fff;
     display: grid;
     grid-template-areas: 'tab-image' 'tab-text';
@@ -12,6 +12,7 @@
     text-decoration: none;
     position: relative;
     background-color: #333; 
+
 }
 
 .tab-image-l {
@@ -32,15 +33,16 @@
     padding: 10px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+
+
 }
 /* Portrait Tabs */
 .tab-portrait {
     width: 230px;
     height: 300px;
     font-family: Raleway;
-    font-weight: bolder;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 22px;
     color: #fff;
     display: grid;
     grid-template-areas: 'tab-image' 'tab-text';
@@ -61,19 +63,23 @@
 /* Category Colors */
 .tab-attractions, .tab-landscape.tab-attractions {
     background-color: #FF8912;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tab-activities, .tab-landscape.tab-activities {
     background-color: #FFCD05;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
 .tab-events, .tab-landscape.tab-events {
     background-color: #1A40BC;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tab-food, .tab-landscape.tab-food {
     background-color: #FF5C64;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Heart Icon*/

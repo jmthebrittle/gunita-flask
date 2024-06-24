@@ -11,6 +11,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = os.urandom(24)
 db = SQLAlchemy(app)
 
+
 # Favorites model
 class Favorite(db.Model):
     __tablename__ = 'favorites'
@@ -24,7 +25,7 @@ class Favorite(db.Model):
             'id': self.id,
             'img': self.img,
             'text': self.text,
-            'category': self.category
+            'category': self.category,
         }
     
 @app.route('/')
@@ -94,17 +95,22 @@ def dashboard():
 
 #Save and Remove Items (not working with database yet)
 @app.route('/add_item', methods=['POST'])
+@app.route('/add_item', methods=['POST'])
 def add_item():
     data = request.json
     print("Data received for saving:", data)
     if 'img' in data and 'text' in data and 'category' in data:
-        new_favorite = Favorite(img=data['img'], text=data['text'], category=data['category'])
+        new_favorite = Favorite(
+            img=data['img'],
+            text=data['text'],
+            category=data['category'],
+        )
         db.session.add(new_favorite)
         db.session.commit()
-        print("Item saved:", new_favorite) 
+        print("Item saved:", new_favorite)
         return jsonify({'status': 'success', 'id': new_favorite.id})
     else:
-        print("Failed to save item, missing data:", data)  
+        print("Failed to save item, missing data:", data)
         return jsonify({'status': 'failed', 'reason': 'Missing data'}), 400
 
 @app.route('/remove_item', methods=['DELETE'])

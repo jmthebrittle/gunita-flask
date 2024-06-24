@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #D9D9D9;
 }
 
 
@@ -140,21 +140,22 @@ body {
 }
 
 .recommended-section h2 {
-    height: 80px;
+    height: auto;
     text-align: center;
-    margin-bottom: auto;
+    margin: auto;
     font-size: 24px;
-    color:white;
-    background-color: #FF8912;
+    color:#333;
     justify-content: center;
     align-items: center;
+    background-color: aliceblue;
+    padding: 20px;
 }
 
 #rP {
     text-align: center;
-    margin-bottom: auto;
     font-size: 16px;
     color: #333;
+    padding: 20px;
    
 }
 
