@@ -30,9 +30,9 @@
 
 .infoimage {
     grid-area: infoimage;
-    height: 300px;
+    height: 600px;
     object-fit: cover;
-    width: 150px;
+    width: 100%;
 }
 
 .region {
