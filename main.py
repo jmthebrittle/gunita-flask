@@ -138,10 +138,10 @@ def get_items():
 @app.route('/category/<category_name>')
 def category_page(category_name):
     images = {
-        'attractions': 'images/Activities_Attractions/mt-pulag-1.jpg',
-        'activities': 'images/Activities_Attractions/siargao-maasin-river-swing-4.jpg',
-        'events': 'images/Events/boracay-dragon-boat-fest-2.jpg',
-        'food': 'images/Food/arrowroot-cookies-1.jpg'
+        'attractions': 'images/banner-img-attractions,png',
+        'activities': 'images/banner-img-activities.png',
+        'events': 'images/banner-img-events.png',
+        'food': 'images/banner-img-food.png'
     }
     
     titles = {
@@ -171,27 +171,27 @@ def homepage():
 
 @app.route('/events')
 def events_page():
-    image_url = '/static/images/Events/boracay-dragon-boat-fest-2.jpg'
+    image_url = '/static/images/banner-img-events.png'
     page_title = 'EVENTS'
     return render_template('mainEventPage.html', image_url=image_url, page_title=page_title)
 
 @app.route('/attractions')
 def attracttions_page():
-    image_url = '/static/images/Activities_Attractions/mt-pulag-1.jpg'
+    image_url = '/static/images/banner-img-attractions.png'
     page_title = 'ATTRACTIONS'
     return render_template('mainAttractionPage.html', image_url=image_url, page_title=page_title)
 
 
 @app.route('/activities')
 def activities_page():
-    image_url = '/static/images/Activities_Attractions/siargao-maasin-river-swing-4.jpg'
+    image_url = '/static/images/banner-img-activities.png'
     page_title = 'ACTIVITIES'
     return render_template('mainActivitiesPage.html', image_url=image_url, page_title=page_title)
 
 
 @app.route('/food')
 def food_page():
-    image_url = '/static/images/Food/arrowroot-cookies-1.jpg'
+    image_url = '/static/images/banner-img-food.png'
     page_title = 'FOOD'
     return render_template('mainFoodPage.html', image_url=image_url, page_title=page_title)
 
