@@ -8,6 +8,8 @@
         <link href="/static/css/layout-itempage.css" rel="stylesheet" />
         <link href="/static/css/tabs.css" rel="stylesheet" />
         <link href="/static/css/footer.css" rel="stylesheet" />
+        <link href="/static/css/homepage.css" rel="stylesheet"/>
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
     </head>
     <body>
         <div class="infopage">
@@ -24,38 +26,55 @@
                 {% include 'infoset-activities.html' %}
             </div>
             
-            <div class="suggestions-infopage">
-                <p class="stext">You can also try:</p>
-                <a class="tab-landscape tab1 tab-activities" href="/GetActByID/1">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://www.destinationsandtea.com/wp-content/uploads/2023/06/IMG_0038-1.jpg">
-                    <p class="tab-text">Mt. Pulag Hiking</p>
-                </a>
-                <a class="tab-landscape tab2 tab-activities" href="/GetActByID/2">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://live.staticflickr.com/7833/32483687247_46c1e2cb7d_b.jpg">
-                    <p class="tab-text">Siargao Island Hopping</p>
-                </a>
-                <a class="tab-landscape tab3 tab-activities" href="/GetActByID/4">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="../static/images/Activities_Attractions/strawberry-picking-1.jpg">
-                    <p class="tab-text">Strawberry Picking</p>
-                </a>
-                <a class="tab-landscape tab4 tab-activities" href="/GetActByID/6">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.philstar.com/photos/2020/07/01/luneta-park_2020-07-01_14-49-16.jpg">
-                    <p class="tab-text">Historical Sightseeing</p>
-                </a>
-            </div>
-
+            <div class="recommended-section">
+                <h2 style="color:#f3c200;">Recommended activities for you</h2>
+                <p id="rP"><span style="font-weight: bolder;">Lorem ipsum dolor </span> sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. </p>
+                <br>
+                <div class="recommended-carousel">
+                    <div class="carousel-content active" data-category="attractions">
+                        <a class="tab-landscape tab-activities" href="/GetActByID/1">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="activities" data-text="Activity Name" data-img="/static/images/Activities_Attractions/banaue-1.jpeg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://www.destinationsandtea.com/wp-content/uploads/2023/06/IMG_0038-1.jpg" alt="Activity Image">
+                                <p class="tab-text" style="background-color:#f3c200;">Mt Pulag Hike</p>
+                            </div>
+                        </a>
+                    
+                        <a class="tab-landscape tab-activities" href="/GetActByID/2">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="activities" data-text="Activity Name" data-img="/static/images/Activities_Attractions//boracay-1.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://live.staticflickr.com/7833/32483687247_46c1e2cb7d_b.jpg" alt="Activity Image">
+                                <p class="tab-text" style="background-color:#f3c200;">Siargao Island Hopping</p>
+                            </div>
+                        </a>
+                        
+                    
+                        <a class="tab-landsscape tab-activities" href="/GetActByID/3">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="activities" data-text="Activity Name" data-img="/static/images/Activities_Attractions/burnham-1.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://dailytravelpill.com/wp-content/uploads/2020/10/siargao-bent-palm-tree-swing-1.jpg" alt="Activity Image">
+                                <p class="tab-text" style="background-color:#f3c200;">Maasin River Swing</p>
+                            </div>
+                        </a>
+                        
+                    
+                        <a class="tab-landscape tab-activities" href="/GetActByID/4">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="activities" data-text="Activity Name" data-img="/static/images/Activities_Attractions/calle-crisologo-1.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="../static/images/Activities_Attractions/strawberry-picking-1.jpg" alt="Activity Image">
+                                <p class="tab-text" style="background-color:#f3c200;">Strawberry Picking</p>
+                            </div>
+                        </a>
+                    </div>    
+                </div>
             <div class="footer">
                 <div class="grid-containerf">
                     <div class="item3f"></div>
