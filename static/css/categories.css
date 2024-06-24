@@ -1,6 +1,6 @@
 .catinformation {
     display: grid;
-    grid-template-areas: 'ititle alttitle' 'infoimage infoimage' 'region region' 'idescription idescription';
+    grid-template-areas: 'ititle' 'infoimage' 'region' 'idescription';
     width: auto;
     height: auto;
     margin-right:20px;
