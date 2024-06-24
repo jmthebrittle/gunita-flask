@@ -8,6 +8,8 @@
         <link href="/static/css/layout-itempage.css" rel="stylesheet" />
         <link href="/static/css/tabs.css" rel="stylesheet" />
         <link href="/static/css/footer.css" rel="stylesheet" />
+        <link href="/static/css/homepage.css" rel="stylesheet"/>
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
     </head>
     <body>
         <div class="infopage">
@@ -24,37 +26,52 @@
                 {% include 'infoset-foods.html' %}
             </div>
             
-            <div class="suggestions-infopage">
-                <p class="stext">You can also try:</p>
-                <a class="tab-landscape tab1 tab-food" href="/GetFoodByID/1">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="/static/images/Food/arrowroot-cookies-1.jpg">
-                    <p class="tab-text">Arrowroot Cookies</p>
-                </a>
-                <a class="tab-landscape tab2 tab-food" href="/GetFoodByID/2">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://www.kawalingpinoy.com/wp-content/uploads/2019/06/kapampangan-pork-bulanglang-3.jpg">
-                    <p class="tab-text">Bulanglang</p>
-                </a>
-                <a class="tab-landscape tab3 tab-food" href="/GetFoodByID/3">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://img.freepik.com/premium-photo/authentic-filipino-adobong-pugita-octopus-delicacy-ready-serve_1106454-27320.jpg">
-                    <p class="tab-text">Octopus Adobo</p>
-                </a>
-                <a class="tab-landscape tab4 tab-food" href="/GetFoodByID/4">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://www.foxyfolksy.com/wp-content/uploads/2016/09/pinakbet-tagalog.jpg">
-                    <p class="tab-text">Pinakbet</p>
-                </a>
-            </div>
+            <div class="recommended-section">
+                <h2 style="color:#FF5C64;">Recommended food for you</h2>
+                <p id="rP"><span style="font-weight: bolder;">Lorem ipsum dolor </span> sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. </p>
+                <br>
+                <div class="recommended-carousel">
+                    <div class="carousel-content active" data-category="attractions">
+                        <a class="tab-landscape tab-food" href="/GetFoodByID/6">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="food" data-text="Octopus Adobo" data-img="https://img.freepik.com/premium-photo/authentic-filipino-adobong-pugita-octopus-delicacy-ready-serve_1106454-27320.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://img.freepik.com/premium-photo/authentic-filipino-adobong-pugita-octopus-delicacy-ready-serve_1106454-27320.jpg" alt="Food Image">
+                                <p class="tab-text">Octopus Adobo</p>
+                            </div>
+                        </a>
+                        <a class="tab-landscape tab-food" href="/GetFoodByID/7">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="food" data-text="Pinakbet" data-img="https://www.foxyfolksy.com/wp-content/uploads/2016/09/pinakbet-tagalog.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://www.foxyfolksy.com/wp-content/uploads/2016/09/pinakbet-tagalog.jpg" alt="Food Image">
+                                <p class="tab-text">Pinakbet</p>
+                            </div>
+                        </a>
+                        
+                        <a class="tab-landscape tab-food" href="/GetFoodByID/8">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="food" data-text="Sapin Sapin" data-img="https://yummykitchentv.com/wp-content/uploads/2022/06/sapin-sapin-image.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://yummykitchentv.com/wp-content/uploads/2022/06/sapin-sapin-image.jpg" alt="Food Image">
+                                <p class="tab-text">Sapin Sapin</p>
+                            </div>
+                        </a>
+                    
+                        <a class="tab-landscape tab-food" href="/GetFoodByID/10">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="food" data-text="Tupig" data-img="https://2.bp.blogspot.com/-khfhgcCTsZY/WK8bwsW1-II/AAAAAAAAi-M/zFfGeSOQyBMZ-crZQoXHZ8xXDY2T-IVSgCLcB/s1600/IMG_8731.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://2.bp.blogspot.com/-khfhgcCTsZY/WK8bwsW1-II/AAAAAAAAi-M/zFfGeSOQyBMZ-crZQoXHZ8xXDY2T-IVSgCLcB/s1600/IMG_8731.jpg" alt="Food Image">
+                                <p class="tab-text">Tupig</p>
+                            </div>
+                        </a>
+                    </div>    
+                </div>
 
             <div class="footer">
                 <div class="grid-containerf">

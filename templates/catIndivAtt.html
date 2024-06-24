@@ -8,6 +8,8 @@
         <link href="/static/css/layout-itempage.css" rel="stylesheet" />
         <link href="/static/css/tabs.css" rel="stylesheet" />
         <link href="/static/css/footer.css" rel="stylesheet" />
+        <link href="/static/css/homepage.css" rel="stylesheet"/>
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
     </head>
     <body>
         <div class="infopage">
@@ -24,37 +26,54 @@
                 {% include 'infoset-attractions.html' %}
             </div>
             
-            <div class="suggestions-infopage">
-                <p class="stext">You can also try:</p>
-                <a class="tab-landscape tab1 tab-attractions" href="/GetAttByID/1">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.istockphoto.com/id/502155294/photo/banaue-rice-terraces.jpg?s=2048x2048&w=is&k=20&c=Pc5E_CfzO2VSYAwrS28QCRTmCGVPcvbjX9PLolQWTjI=">
-                    <p class="tab-text">Banaue Rice Terraces</p>
-                </a>
-                <a class="tab-landscape tab2 tab-attractions" href="/GetAttByID/3">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/BURNHAM_PARK_02.jpg">
-                    <p class="tab-text">Burnham Park</p>
-                </a>
-                <a class="tab-landscape tab3 tab-attractions" href="/GetAttByID/1">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://www.adventuredragon.com/wp-content/uploads/2018/03/Diniwid-Beach-Boracay-Beaches.jpg">
-                    <p class="tab-text">Boracay Beach</p>
-                </a>
-                <a class="tab-landscape tab4 tab-attractions" href="/GetAttByID/6">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/Philippines-small-640x480_0.jpg">
-                    <p class="tab-text">El Nido Palawan</p>
-                </a>
-            </div>
+            <div class="recommended-section">
+                <h2 style="color:#FF8912;">Recommended attractions for you</h2>
+                <p id="rP"><span style="font-weight: bolder;">Lorem ipsum dolor </span> sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. </p>
+                <br>
+                <div class="recommended-carousel">
+                    <!--Attractions-->
+                    <div class="carousel-content active" data-category="attractions">
+                        <a class="tab-landscape tab-attractions" href="/GetAttByID/1">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="attractions" data-text="Banaue" data-img="https://www.livedreamdiscover.com/wp-content/uploads/2016/06/Hapao-8.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://www.livedreamdiscover.com/wp-content/uploads/2016/06/Hapao-8.jpg" alt="Attraction Image">
+                                <p class="tab-text">Banaue</p>
+                            </div>
+                        </a>
+                        
+                        <a class="tab-landscape tab-attractions" href="/GetAttByID/2">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="attractions" data-text="Boracay Beach" data-img="https://www.adventuredragon.com/wp-content/uploads/2018/03/Diniwid-Beach-Boracay-Beaches.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://www.adventuredragon.com/wp-content/uploads/2018/03/Diniwid-Beach-Boracay-Beaches.jpg" alt="Attraction Image">
+                                <p class="tab-text">Boracay Beach</p>
+                            </div>
+                        </a>
+                        
+                        <a class="tab-landscape tab-attractions" href="/GetAttByID/3">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="attractions" data-text="Burnham Park" data-img="https://upload.wikimedia.org/wikipedia/commons/0/0b/BURNHAM_PARK_02.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/BURNHAM_PARK_02.jpg" alt="Attraction Image">
+                                <p class="tab-text">Burnham Park</p>
+                            </div>
+                        </a>
+                        
+                        <a class="tab-landscape tab-attractions" href="/GetAttByID/4">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="attractions" data-text="Calle Crisologo" data-img="https://upload.wikimedia.org/wikipedia/commons/e/e6/Calle_Crisologo%2C_Vigan_at_night.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Calle_Crisologo%2C_Vigan_at_night.jpg" alt="Attraction Image">
+                                <p class="tab-text">Calle Crisologo</p>
+                            </div>
+                        </a>
+                    </div>    
+                </div>
 
             <div class="footer">
                 <div class="grid-containerf">

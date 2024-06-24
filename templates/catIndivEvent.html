@@ -8,6 +8,8 @@
         <link href="/static/css/layout-itempage.css" rel="stylesheet" />
         <link href="/static/css/tabs.css" rel="stylesheet" />
         <link href="/static/css/footer.css" rel="stylesheet" />
+        <link href="/static/css/homepage.css" rel="stylesheet"/>
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
     </head>
     <body>
         <div class="infopage">
@@ -24,37 +26,54 @@
                 {% include 'infoset-events.html' %}
             </div>
             
-            <div class="suggestions-infopage">
-                <p class="stext">You can also try:</p>
-                <a class="tab-landscape tab1 tab-events" href="/GetEventByID/1">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://i.pinimg.com/736x/a8/4e/23/a84e2318133670c2993fa69a312bbff8.jpg">
-                    <p class="tab-text">Bangus Festival</p>
-                </a>
-                <a class="tab-landscape tab2 tab-events" href="/GetEventByID/2">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="/static/images/Events/panagbenga-2.jpg">
-                    <p class="tab-text">Panagbenga Festival</p>
-                </a>
-                <a class="tab-landscape tab3 tab-events" href="/GetEventByID/3">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://media.gettyimages.com/id/668455526/photo/participants-dressed-as-centurions-prepare-to-re-enact-the-passion-and-death-of-christ-during.jpg?s=612x612&w=gi&k=20&c=St16Ov0jxLaHdIr15l--jjxxxTSoduQ4KNY2tcpi-0M=">
-                    <p class="tab-text">Moriones Festival</p>
-                </a>
-                <a class="tab-landscape tab4 tab-events" href="/GetEventByID/5">
-                    <div class="heart-icon-container" onclick="toggleHeart(event, this)">
-                        <div class="heart-icon"></div>
-                    </div>
-                    <img class="tab-image-l" src="https://www.lamudi.com.ph/journal/wp-content/uploads/2019/01/31655_1.jpg">
-                    <p class="tab-text">Longganisa Festival</p>
-                </a>
-            </div>
+            <div class="recommended-section">
+                <h2 style="color:#1A40BC;">Recommended events for you</h2>
+                <p id="rP"><span style="font-weight: bolder;">Lorem ipsum dolor </span> sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. </p>
+                <br>
+                <div class="recommended-carousel">
+                    <div class="carousel-content active" data-category="attractions">
+                        <a class="tab-landscape tab-events" href="/GetEventByID/1">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="events" data-text="Bangus Festival" data-img="https://i.pinimg.com/736x/a8/4e/23/a84e2318133670c2993fa69a312bbff8.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://i.pinimg.com/736x/a8/4e/23/a84e2318133670c2993fa69a312bbff8.jpg" alt="Event Image">
+                                <p class="tab-text">Bangus Festival</p>
+                            </div>
+                        </a>
+                        
+                        
+                        <a class="tab-landscape tab-events" href="/GetEventByID/6">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="events" data-text="Panagbenga Fest" data-img="../static/images/Events/panagbenga-2.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="../static/images/Events/panagbenga-2.jpg" alt="Event Image">
+                                <p class="tab-text">Panagbenga Fest</p>
+                            </div>
+                        </a>
+                    
+                        <a class="tab-landscape tab-events" href="/GetEventByID/8">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="events" data-text="Moriones Festival" data-img="https://media.gettyimages.com/id/668455526/photo/participants-dressed-as-centurions-prepare-to-re-enact-the-passion-and-death-of-christ-during.jpg?s=612x612&w=gi&k=20&c=St16Ov0jxLaHdIr15l--jjxxxTSoduQ4KNY2tcpi-0M=">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://media.gettyimages.com/id/668455526/photo/participants-dressed-as-centurions-prepare-to-re-enact-the-passion-and-death-of-christ-during.jpg?s=612x612&w=gi&k=20&c=St16Ov0jxLaHdIr15l--jjxxxTSoduQ4KNY2tcpi-0M=" alt="Event Image">
+                                <p class="tab-text">Moriones Festival</p>
+                            </div>
+                        </a>
+                    
+                        <a class="tab-landscape tab-events" href="/GetEventByID/2">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="events" data-text="Dragon Festival" data-img="/static/images/Events/boracay-dragon-boat-fest-2.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="/static/images/Events/boracay-dragon-boat-fest-2.jpg" alt="Event Image">
+                                <p class="tab-text">Dragon Festival</p>
+                            </div>
+                        </a>
+                    </div>    
+                </div>
 
             <div class="footer">
                 <div class="grid-containerf">
