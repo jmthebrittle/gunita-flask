@@ -33,20 +33,21 @@
     <!-- Main Content -->
     <div class="itempage">
         <div class="sidebar">
-            <h2>My Saved Items</h2>
+            <h2 style="color:#FF5C64 ; font-weight: bolder;">My Saved Items</h2>
             <ul>
-                <li><a href="#saved-attractions">Attractions</a></li>
-                <li><a href="#saved-activities">Activities</a></li>
-                <li><a href="#saved-events">Events</a></li>
-                <li><a href="#saved-food">Food</a></li>
+                <li ><a style="color:#FF8912 ; font-weight: bolder;" href="#saved-attractions">Attractions</a></li>
+                <li ><a style="color:#A38303 ; font-weight: bolder;" href="#saved-activities">Activities</a></li>
+                <li ><a style="color:#1A40BC ; font-weight: bolder;" href="#saved-events">Events</a></li>
+                <li ><a style="color:#FF5C64 ; font-weight: bolder;" href="#saved-food">Food</a></li>
+                <button id="resetDashboardBtn" class="reset-dashboard-btn">Reset Dashboard</button>
             </ul>
             <button class="signout">Sign Out</button>
         </div>
         <div class="content">
             <div id="saved-attractions" class="saved-items">
-                <h3>Saved Attractions</h3>
+                <h3 style="color: #FF8912;">SAVED ATTRACTIONS</h3>
                 <div class="tab-container">
-                    
+                    <button class="carousel-arrow left-arrow bcolor1" onclick="scrollCarousel('attractions', -1)">&#10094;</button>
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'attractions' %}
                             <div class="tab-item">
@@ -62,15 +63,15 @@
                             </div>
                         {% endfor %}
                     </div>
-                  
+                    <button class="carousel-arrow right-arrow bcolor1" onclick="scrollCarousel('attractions', 1)">&#10095;</button>
                 </div>
             </div>
 
 
             <div id="saved-activities" class="saved-items">
-                <h3>Saved Activities</h3>
+                <h3 style="color: #f3c200;">SAVED ACTIVITIES</h3>
                 <div class="tab-container">
-                   
+                    <button class="carousel-arrow left-arrow bcolor2" onclick="scrollCarousel('activities', -1)">&#10094;</button>
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'activities' %}
                             <div class="tab-item">
@@ -86,15 +87,15 @@
                             </div>
                         {% endfor %}
                     </div>
-                   
+                    <button class="carousel-arrow right-arrow bcolor2" onclick="scrollCarousel('activities', 1)">&#10095;</button>
                 </div>
             </div>
 
  
             <div id="saved-events" class="saved-items">
-                <h3>Saved Events</h3>
+                <h3 style="color: #1A40BC;">SAVED EVENTS</h3>
                 <div class="tab-container">
-                   
+                    <button class="carousel-arrow left-arrow bcolor3" onclick="scrollCarousel('events', -1)">&#10094;</button>
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'events' %}
                             <div class="tab-item">
@@ -110,15 +111,16 @@
                             </div>
                         {% endfor %}
                     </div>
-                
+                    <button class="carousel-arrow right-arrow bcolor3" onclick="scrollCarousel('events', 1)">&#10095;</button>
                 </div>
             </div>
+            
 
  
             <div id="saved-food" class="saved-items">
-                <h3>Saved Food</h3>
+                <h3 style="color: #FF333D;">SAVED FOOD</h3>
                 <div class="tab-container">
-                   
+                    <button class="carousel-arrow left-arrow bcolor4" onclick="scrollCarousel('food', -1)">&#10094;</button>
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'food' %}
                             <div class="tab-item">
@@ -128,17 +130,16 @@
                                             <div class="heart-icon"></div>
                                         </div>
                                         <img class="tab-image-p" src="{{ favorite.img }}" alt="{{ favorite.text }}">
-                                        <p class="tab-text" style="background-color:#FF5C64;" >{{ favorite.text }}</p>
+                                        <p class="tab-text" style="background-color:#FF5C64;">{{ favorite.text }}</p>
                                     </div>
                                 </a>
                             </div>
                         {% endfor %}
                     </div>
-                
+                    <button class="carousel-arrow right-arrow bcolor4" onclick="scrollCarousel('food', 1)">&#10095;</button>
                 </div>
             </div>
-
-
+            
         </div>
     </div>
 
@@ -149,6 +150,15 @@
         <p>Are you sure you want to remove this item from your dashboard?</p>
         <button id="confirmRemove" class="confirm-btn">Yes</button>
         <button id="cancelRemove" class="cancel-btn">No</button>
+    </div>
+</div>
+
+<div id="resetConfirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeResetModal">&times;</span>
+        <p>Are you sure you want to clear all items from your dashboard?</p>
+        <button id="confirmReset" class="confirm-btn">Yes</button>
+        <button id="cancelReset" class="cancel-btn">No</button>
     </div>
 </div>
 

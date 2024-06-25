@@ -32,6 +32,59 @@ class Favorite(db.Model):
 def home():
     return render_template("homepage.html")
 
+#Save and Remove Items (not working with database yet)
+@app.route('/add_item', methods=['POST'])
+def add_item():
+    data = request.json
+    print("Data received for saving:", data)
+    if 'img' in data and 'text' in data and 'category' in data:
+        new_favorite = Favorite(
+            img=data['img'],
+            text=data['text'],
+            category=data['category'],
+        )
+        db.session.add(new_favorite)
+        db.session.commit()
+        print("Item saved:", new_favorite)
+        return jsonify({'status': 'success', 'id': new_favorite.id})
+    else:
+        print("Failed to save item, missing data:", data)
+        return jsonify({'status': 'failed', 'reason': 'Missing data'}), 400
+
+@app.route('/remove_item', methods=['DELETE'])
+def remove_item():
+    data = request.json
+    print("Data received for removing:", data)
+    favorite = Favorite.query.filter_by(img=data['img'], text=data['text'], category=data['category']).first()
+    if favorite:
+        print("Item found:", favorite)  
+        db.session.delete(favorite)
+        db.session.commit()
+        print("Item deleted:", favorite) 
+        return jsonify({'status': 'success'})
+    else:
+        print("Item not found:", data)  
+        return jsonify({'status': 'not found'}), 404
+
+@app.route('/get_items', methods=['GET'])
+def get_items():
+    favorites = Favorite.query.all()
+    items = [favorite.to_dict() for favorite in favorites]
+    return jsonify(items)
+
+@app.route('/clear_dashboard', methods=['DELETE'])
+def clear_dashboard():
+    try:
+        num_rows_deleted = db.session.query(Favorite).delete()
+        db.session.commit()
+        print(f"{num_rows_deleted} items deleted from the dashboard.")
+        return jsonify({'status': 'success', 'message': 'Dashboard cleared.'})
+    except Exception as e:
+        print("Error clearing dashboard:", e)
+        db.session.rollback()
+        return jsonify({'status': 'failed', 'reason': str(e)}), 500
+
+
 # SIGN UP
 @app.route('/createNewAcc', methods=['GET', 'POST'])
 def create_user():
@@ -84,7 +137,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('username', None)
-    return redirect('/login')
+    return redirect(url_for('login'))  
 
 @app.route('/profile')
 def dashboard():
@@ -93,46 +146,7 @@ def dashboard():
     favorites = Favorite.query.all()
     return render_template('userDashboard.html', favorites=favorites)
 
-#Save and Remove Items (not working with database yet)
-@app.route('/add_item', methods=['POST'])
-@app.route('/add_item', methods=['POST'])
-def add_item():
-    data = request.json
-    print("Data received for saving:", data)
-    if 'img' in data and 'text' in data and 'category' in data:
-        new_favorite = Favorite(
-            img=data['img'],
-            text=data['text'],
-            category=data['category'],
-        )
-        db.session.add(new_favorite)
-        db.session.commit()
-        print("Item saved:", new_favorite)
-        return jsonify({'status': 'success', 'id': new_favorite.id})
-    else:
-        print("Failed to save item, missing data:", data)
-        return jsonify({'status': 'failed', 'reason': 'Missing data'}), 400
 
-@app.route('/remove_item', methods=['DELETE'])
-def remove_item():
-    data = request.json
-    print("Data received for removing:", data)
-    favorite = Favorite.query.filter_by(img=data['img'], text=data['text'], category=data['category']).first()
-    if favorite:
-        print("Item found:", favorite)  
-        db.session.delete(favorite)
-        db.session.commit()
-        print("Item deleted:", favorite) 
-        return jsonify({'status': 'success'})
-    else:
-        print("Item not found:", data)  
-        return jsonify({'status': 'not found'}), 404
-
-@app.route('/get_items', methods=['GET'])
-def get_items():
-    favorites = Favorite.query.all()
-    items = [favorite.to_dict() for favorite in favorites]
-    return jsonify(items)
 
 #For dynamic banner image change per pages
 @app.route('/category/<category_name>')

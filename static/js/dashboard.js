@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     setupHeartIcons();
     setupModals();
+    setupResetDashboardButton();
+    setupSidebarLinks();
+    setupSignOutButton();  
 });
 
 function setupHeartIcons() {
@@ -52,26 +55,21 @@ function confirmRemoval(event, element) {
             category: modal.currentItem.querySelector('.heart-icon-container').dataset.category
         };
 
-        
-        modal.currentItem.remove();
-        
-        // Send delete request
         removeItem(itemData).then(response => {
             if (response.status === 'success') {
+                modal.currentItem.remove();
                 modal.style.display = 'none';
-                alert('Item removed from the dashboard.'); 
+                alert('Item removed from the dashboard.');
             } else {
-                alert('Failed to remove the item.'); 
+                alert('Failed to remove the item.');
             }
         });
     };
 }
 
 function toggleFavorite(event, element, adding) {
-    if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
+    event.preventDefault();
+    event.stopPropagation();
 
     element.classList.toggle('active', adding);
     const isSaved = element.classList.contains('active');
@@ -86,29 +84,15 @@ function toggleFavorite(event, element, adding) {
                   'food',
     };
 
-    if (isSaved) {
-        saveItem(itemData);
-    } else {
-        removeItem(itemData);
+    if (!isSaved) {
+        removeItem(itemData).then(response => {
+            if (response.status === 'success') {
+                alert('Item removed from the dashboard.');
+            } else {
+                alert('Failed to remove the item.');
+            }
+        });
     }
-}
-
-function saveItem(itemData) {
-    fetch('/add_item', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(itemData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            location.reload();
-        } else {
-            alert('Failed to add the item to the dashboard.'); 
-        }
-    });
 }
 
 function removeItem(itemData) {
@@ -119,12 +103,82 @@ function removeItem(itemData) {
         },
         body: JSON.stringify(itemData)
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            location.reload();  
-        } else {
-            alert('Failed to remove the item from the dashboard.'); 
+    .then(response => response.json());
+}
+
+
+function setupResetDashboardButton() {
+    const resetButton = document.getElementById('resetDashboardBtn');
+    const resetModal = document.getElementById('resetConfirmationModal');
+    const confirmReset = document.getElementById('confirmReset');
+    const cancelReset = document.getElementById('cancelReset');
+    const closeResetModal = document.getElementById('closeResetModal');
+
+    resetButton.addEventListener('click', () => {
+        resetModal.style.display = 'block';
+    });
+
+    closeResetModal.onclick = () => {
+        resetModal.style.display = 'none';
+    };
+
+    cancelReset.onclick = () => {
+        resetModal.style.display = 'none';
+    };
+
+    confirmReset.onclick = () => {
+        clearDashboard().then(response => {
+            if (response.status === 'success') {
+                alert('Dashboard cleared.');
+                location.reload();
+            } else {
+                alert('Failed to clear the dashboard.');
+            }
+            resetModal.style.display = 'none';
+        });
+    };
+
+    window.onclick = (event) => {
+        if (event.target === resetModal) {
+            resetModal.style.display = 'none';
         }
+    };
+}
+
+function clearDashboard() {
+    return fetch('/clear_dashboard', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json());
+}
+
+function scrollCarousel(category, direction) {
+    const carouselWrapper = document.querySelector(`#saved-${category} .carousel-wrapper`);
+    const scrollAmount = carouselWrapper.clientWidth / 2; // Adjust as needed
+    if (direction === -1) {
+        carouselWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        carouselWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+
+function setupSidebarLinks() {
+    const links = document.querySelectorAll('.sidebar ul li a');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function () {
+            links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+}
+
+function setupSignOutButton() {
+    const signOutButton = document.querySelector('.signout');
+    signOutButton.addEventListener('click', () => {
+        window.location.href = '/logout';
     });
 }
