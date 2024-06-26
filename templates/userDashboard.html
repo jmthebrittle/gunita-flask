@@ -51,7 +51,7 @@
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'attractions' %}
                             <div class="tab-item">
-                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="/GetAttByID/1">
                                     <div class="tab-content">
                                         <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
                                             <div class="heart-icon"></div>
@@ -75,7 +75,7 @@
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'activities' %}
                             <div class="tab-item">
-                                <a class="tab-landscape tab-{{ favorite.category }}" href="{{ favorite.link }}">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="/GetActByID/2">
                                     <div class="tab-content">
                                         <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}" data-link="{{ favorite.link }}">
                                             <div class="heart-icon"></div>
@@ -99,7 +99,7 @@
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'events' %}
                             <div class="tab-item">
-                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="/GetEventByID/1">
                                     <div class="tab-content">
                                         <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
                                             <div class="heart-icon"></div>
@@ -124,7 +124,7 @@
                     <div class="carousel-wrapper">
                         {% for favorite in favorites if favorite.category == 'food' %}
                             <div class="tab-item">
-                                <a class="tab-landscape tab-{{ favorite.category }}" href="#">
+                                <a class="tab-landscape tab-{{ favorite.category }}" href="/GetFoodByID/7">
                                     <div class="tab-content">
                                         <div class="heart-icon-container active" data-img="{{ favorite.img }}" data-text="{{ favorite.text }}" data-category="{{ favorite.category }}">
                                             <div class="heart-icon"></div>
