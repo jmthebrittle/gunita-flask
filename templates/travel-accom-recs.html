@@ -1,0 +1,56 @@
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="recommendations">
+        <div class="travel-options">
+            <h3>Travel Options</h3>
+            <div class="travel-option">
+                <span class="icon">
+                    <img src="{{ url_for('static', filename='icons/car.svg') }}" alt="Private Car Icon">
+                </span>
+                <div id="car">Private Car</div>
+                <div class="travel-bar car-bar"></div>
+            </div>
+            <div class="travel-option">
+                <span class="icon">
+                    <img src="{{ url_for('static', filename='icons/bus.svg') }}" alt="Bus Icon">
+                </span>
+                <div id="bus">Bus</div>
+                <div class="travel-bar bus-bar"></div>
+            </div>
+            <div class="travel-option">
+                <span class="icon">
+                    <img src="{{ url_for('static', filename='icons/JeepIcon.svg') }}" alt="Ferry Icon">
+                </span>
+                <div id="jeep">Jeep</div>
+                <div class="travel-bar jeep-bar"></div>
+            </div>
+            <div class="travel-option">
+                <span class="icon">
+                    <img src="{{ url_for('static', filename='icons/airplane.svg') }}" alt="Plane Icon">
+                </span>
+                <div id="plane">Plane</div>
+                <div class="travel-bar plane-bar"></div>
+            </div>
+        </div>
+        <div class="accommodation-options">
+            <h3>Accommodation Options</h3>
+            <div class="scroll-container">
+                <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+                <div class="accommodations">
+                    <div class="accommodation-item" data-name="Accommodation 1">
+                        <img src="/static/images/Accom/cjh-the-manor-1.jpg" alt="Accommodation 1">
+                    </div>
+                    <div class="accommodation-item" data-name="Accommodation 2">
+                        <img src="/static/images/Accom/azalea-3.jpg" alt="Accommodation 2">
+                    </div>
+                    <div class="accommodation-item" data-name="Accommodation 3">
+                        <img src="/static/images/Accom/club-paradise-palawan-3.jpg" alt="Accommodation 3">
+                    </div>
+                </div>
+                <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+            </div>
+        </div>
+    </div>
+</body>

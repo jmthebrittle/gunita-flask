@@ -1,4 +1,3 @@
-/* Importing the Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap');
 
 * {
@@ -49,13 +48,13 @@
 }
 
 .event-name {
-    font-family: 'Poppins', sans-serif; /* Heading font */
+    font-family: 'Poppins', sans-serif; 
     font-size: 2em;
     color: #1e3a8a;
 }
 
 .region {
-    font-family: 'Poppins', sans-serif; /* Heading font */
+    font-family: 'Poppins', sans-serif; 
     font-size: 1.5em;
     color: #ef4444;
 }
@@ -67,13 +66,13 @@
 
 .description strong {
     font-weight: bold;
-    font-family: 'Poppins', sans-serif; /* Bold text */
+    font-family: 'Poppins', sans-serif; 
 }
 
 .description .highlight {
     color: #f59e0b;
     font-weight: bold;
-    font-family: 'Poppins', sans-serif; /* Highlighted text */
+    font-family: 'Poppins', sans-serif; 
 }
 
 .recommendations {
@@ -95,9 +94,11 @@
 
 .travel-options h3,
 .accommodation-options h3 {
-    font-family: 'Poppins', sans-serif; /* Heading font */
+    font-family: 'Poppins', sans-serif; 
     font-size: 1.2em;
     margin-bottom: 10px;
+    text-align: center;
+    color: #ef4444;
 }
 
 .travel-option {
@@ -111,7 +112,6 @@
     margin-right: 10px;
 }
 
-/* Styles for scrollable accommodation section */
 .scroll-container {
     position: relative;
 }
@@ -123,16 +123,16 @@
 }
 
 .accommodation-item {
-    min-width: 120px; /* Reduced width */
+    min-width: 120px; 
     margin-right: 10px;
     position: relative;
 }
 
 .accommodation-item img {
     width: 100%;
-    max-width: 120px; /* Ensure max width */
+    max-width: 120px;
     height: auto;
-    max-height: 90px; /* Set max height */
+    max-height: 90px; 
     border: 1px solid #ccc;
     border-radius: 8px;
 }
@@ -169,4 +169,46 @@
 
 .scroll-button.right {
     right: 0;
+}
+
+#car{
+    font-weight: bolder;    
+    color: #F07239;
+    margin-right: 10px;
+  }
+#bus{
+    font-weight: bolder;    
+    color: #CFA600;
+    margin-right: 10px;
+  }
+#jeep{
+    font-weight: bolder;    
+    color: #1A40BC;
+    margin-right: 10px;
+  }
+#plane{
+    font-weight: bolder;    
+    color: #da5259;
+    margin-right: 10px;
+  }
+  .travel-bar {
+    height: 10px; 
+    border-radius: 5px; 
+    flex: 4; 
+}
+
+.car-bar {
+    background: linear-gradient(to right, #F07239 90%, #ffdc9f 10%); /* Blue gradient */
+}
+
+.bus-bar {
+    background: linear-gradient(to right, #CFA600 55%, #fdea9e 45%); /* Blue gradient */
+}
+
+.jeep-bar {
+    background: linear-gradient(to right, #1A40BC 82%, #a9bdff 18%); /* Red gradient */
+}
+
+.plane-bar {
+    background: linear-gradient(to right, #da5259 30%, #ffc6c9 70%); /* Yellow gradient */
 }
