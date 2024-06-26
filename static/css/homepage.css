@@ -81,7 +81,7 @@ body {
 
 .region-container {
     padding: 20px;
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     border-radius: 10px;
     background-color: #fff;
 }
@@ -107,15 +107,17 @@ body {
 .region-info {
     flex: 2;
     padding: 20px;
+    height: 100%;
 }
 
 .region-title {
-    font-size: 24px;
+    font-size: 48px;
     color: #1A40BC;
+    font-weight: 800;
 }
 
 .region-subtitle {
-    font-size: 20px;
+    font-size: 24px;
     color: #FF5C64;
 }
 
@@ -124,8 +126,17 @@ body {
     color: #333;
 }
 
-.best-known-for {
-    padding: 20px;
+.hPopular-destinations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.hPopular-destinations .tab {
+    flex: 1; 
+    margin: 10px; 
+    max-width: 25%; 
 }
 
 
@@ -134,7 +145,7 @@ body {
     padding: 10px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
     margin-top: 20px;
 }
 
@@ -143,7 +154,7 @@ body {
     text-align: center;
     margin: auto;
     font-size: 24px;
-    color:#333;
+    color:#FF5C64;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -153,7 +164,8 @@ body {
     text-align: center;
     font-size: 16px;
     color: #333;
-    padding: 20px;
+    padding-right: 30px;
+    margin: 20px;
    
 }
 

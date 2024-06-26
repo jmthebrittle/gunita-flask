@@ -44,13 +44,55 @@
                     <img src="/static/icons/Philippine Map.svg" alt="Map" class="map-img">
                 </div>
                 <div class="region-info">
-                    <h1 class="region-title">REGION NAME</h1>
-                    <h2 class="region-subtitle">Location title goes here</h2>
+                    <h1 class="region-title" style="font-weight: 800;">The Philippines</h1>
+                    <h2 class="region-subtitle">A Southeast Asian country</h2>
                     <p class="region-description">
                         Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. Lorem ipsum dolor sit amet consectetur. Adipiscing sed cursus viverra ultricies ac faucibus diam massa. In vestibulum volutpat adipiscing ut erat eget. Maecenas nunc at vitae vel id lobortis at eget lobortis. Nunc cras dignissim nisl diam arcu quam consectetur pretium. Feugiat odio neque volutpat quam. Amet at mauris tellus lectus massa mus elementum. 
                     </p>
+                    <h2 class="region-subtitle" style="margin-top: 15px; font-weight:bolder;">Best known for: </h2>
+                    <!--Popular destinations-->
+                    <div class="hPopular-destinations">
+                        
+                        <a class="tab-landscape tab-attractions" href="/GetAttByID/4">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="attractions" data-text="Calle Crisologo" data-img="https://upload.wikimedia.org/wikipedia/commons/e/e6/Calle_Crisologo%2C_Vigan_at_night.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Calle_Crisologo%2C_Vigan_at_night.jpg" alt="Attraction Image">
+                                <p class="tab-text">Calle Crisologo</p>
+                            </div>
+                        </a>
+                        <a class="tab-portrait tab-activities" href="/GetActByID/2">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="activities" data-text="Siargao Island Hopping" data-img="https://live.staticflickr.com/7833/32483687247_46c1e2cb7d_b.jpg"">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://live.staticflickr.com/7833/32483687247_46c1e2cb7d_b.jpg" alt="Activity Image">
+                                <p class="tab-text">Siargao Island Hopping</p>
+                            </div>
+                        </a>
+                        <a class="tab-portrait tab-events" href="/GetEventByID/6">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="events" data-text="Panagbenga Fest" data-img="../static/images/Events/panagbenga-2.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="../static/images/Events/panagbenga-2.jpg" alt="Event Image">
+                                <p class="tab-text">Panagbenga Festival</p>
+                            </div>
+                        </a>
+                        <a class="tab-portrait tab-food" href="/GetFoodByID/7">
+                            <div class="tab-content">
+                                <div class="heart-icon-container" onclick="toggleHeart(event, this)" data-category="food" data-text="Pinakbet" data-img="https://www.foxyfolksy.com/wp-content/uploads/2016/09/pinakbet-tagalog.jpg">
+                                    <div class="heart-icon"></div>
+                                </div>
+                                <img class="tab-image-p" src="https://www.foxyfolksy.com/wp-content/uploads/2016/09/pinakbet-tagalog.jpg" alt="Food Image">
+                                <p class="tab-text">Pinakbet</p>
+                            </div>
+                        </a>
+                    </div>
                    
                 </div>
+            </div>
             </div>
        
    <!-- Recommended Section -->
