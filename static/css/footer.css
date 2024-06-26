@@ -1,6 +1,6 @@
 .item1f { grid-area: logo1; }
 .item2f { grid-area: logo2; }
-.item3f { grid-area: spacing; height: 200px;width: 100%;}
+.item3f { grid-area: spacing; height: 50px;width: 100%;}
 
 .grid-containerf {
 display: grid;
@@ -14,16 +14,16 @@ margin-top: 20px;
 }
 
 .flogo1 {
-    width: 264px;
-    height: 84px;
+    width: 132px;
+    height: 42px;
     background: url("../images/itsmorefun.png");
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: auto;
   }
   .flogo2 {
-    width: 78px;
-    height: 84px;
+    width: 39px;
+    height: 42px;
     background: url("../images/gunita-logo.png");
     background-repeat: no-repeat;
     background-size: cover;
