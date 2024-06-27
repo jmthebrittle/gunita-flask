@@ -32,7 +32,6 @@ class Favorite(db.Model):
 def home():
     return render_template("homepage.html")
 
-#Save and Remove Items (not working with database yet)
 @app.route('/add_item', methods=['POST'])
 def add_item():
     data = request.json
